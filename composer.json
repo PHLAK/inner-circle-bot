@@ -1,0 +1,41 @@
+{
+    "name": "theinnercircle/icbot",
+    "description": "The Inner Circle chat bot",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Kankiewicz",
+            "email": "Chris@ChrisKankiewicz.com"
+        }
+    ],
+    "require": {
+        "botman/botman": "^2.5",
+        "botman/driver-telegram": "^1.5",
+        "php-di/slim-bridge": "^3.0",
+        "slim/psr7": "^0.6.0",
+        "slim/slim": "^4.3",
+        "tightenco/collect": "^5.0 || ^6.0",
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^8.5",
+        "psy/psysh": "^0.9.12",
+        "vimeo/psalm": "^3.7"
+    }
+}
