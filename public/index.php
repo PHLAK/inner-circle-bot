@@ -27,6 +27,7 @@ $container->call(function (BotMan $botman) {
         $botman->reply('pong');
     });
 
+    $botman->hears('busy', Commands\Busy::class);
     $botman->hears('eightball {question}', Commands\Eightball::class);
     $botman->hears('roll ([0-9]+)d([0-9]+)', Commands\Roll::class);
 
