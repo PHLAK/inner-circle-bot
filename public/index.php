@@ -31,6 +31,7 @@ $container->call(function (BotMan $botman) {
     $botman->hears('eightball {question}', Commands\Eightball::class);
     $botman->hears('roll ([0-9]+)d([0-9]+)', Commands\Roll::class);
     $botman->hears('slap {name}', Commands\Slap::class);
+    $botman->hears('xkcd(?: ([0-9]+))?', Commands\XKCD::class);
 
     $botman->fallback(Commands\Fallback::class);
 });
