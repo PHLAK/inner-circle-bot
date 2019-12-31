@@ -34,8 +34,11 @@ class StripBotName implements Received
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {
         $botName = (string) $this->config->get('app.bot_name');
-        $canonicalized = preg_replace("/@{$botName}/", '', $message->getText());
-        $message->setText($canonicalized);
+
+        if (preg_match("/^[^@\s]+@{$botName}.*$/", $message->getText())) {
+            $canonicalized = preg_replace("/@{$botName}/", '', $message->getText());
+            $message->setText($canonicalized);
+        }
 
         return $next($message);
     }
