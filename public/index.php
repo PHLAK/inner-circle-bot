@@ -8,17 +8,17 @@ use DI\Container;
 use Dotenv\Dotenv;
 use Slim\Psr7\Response;
 
-$root = dirname(__DIR__);
-require $root . '/vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 // Initialize environment variable handler
-Dotenv::createImmutable($root)->load();
+Dotenv::createImmutable(dirname(__DIR__))->load();
 
 // Initialize the container
 $container = new Container();
-$container->set('app.config', require $root . '/config/app.php');
+$container->set('base_path', dirname(__DIR__));
 
 // Configure the application componentes
+$container->call(Bootstrap\ConfigProvider::class);
 $container->call(Bootstrap\BotManProvider::class);
 
 // Register bot commands

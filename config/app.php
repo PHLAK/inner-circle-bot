@@ -3,7 +3,6 @@
 use App\Support\Helpers;
 
 return [
-    'telegram' => [
-        'token' => Helpers::env('TELEGRAM_TOKEN'),
-    ]
+    /** The bot's name (without the @) */
+    'bot_name' => Helpers::env('BOT_NAME'),
 ];
