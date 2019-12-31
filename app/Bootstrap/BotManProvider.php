@@ -2,6 +2,7 @@
 
 namespace App\Bootstrap;
 
+use App\Middleware\StripLeadingSlash;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
@@ -33,7 +34,10 @@ class BotManProvider
         $this->container->set(BotMan::class, function () {
             DriverManager::loadDriver(TelegramDriver::class);
 
-            return BotManFactory::create($this->container->get('app.config'));
+            $botman = BotManFactory::create($this->container->get('app.config'));
+            $botman->middleware->received(new StripLeadingSlash);
+
+            return $botman;
         });
     }
 }
