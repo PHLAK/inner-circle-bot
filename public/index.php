@@ -30,6 +30,7 @@ $container->call(function (BotMan $botman) {
     $botman->hears('busy', Commands\Busy::class);
     $botman->hears('eightball {question}', Commands\Eightball::class);
     $botman->hears('roll ([0-9]+)d([0-9]+)', Commands\Roll::class);
+    $botman->hears('slap {name}', Commands\Slap::class);
 
     $botman->fallback(Commands\Fallback::class);
 });
