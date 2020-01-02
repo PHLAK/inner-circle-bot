@@ -16,7 +16,7 @@ Dotenv::createImmutable(dirname(__DIR__))->load();
 $container = new Container();
 $container->set('base_path', dirname(__DIR__));
 
-// Configure the application componentes
+// Configure the application components
 $container->call(Bootstrap\ConfigProvider::class);
 $container->call(Bootstrap\LoggingProvider::class);
 $container->call(Bootstrap\BotManProvider::class);
