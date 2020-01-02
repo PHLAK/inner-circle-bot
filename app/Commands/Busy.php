@@ -34,22 +34,6 @@ class Busy
         'splines', 'states', 'structures', 'tables', 'threads'
     ];
 
-    /** @var Collection */
-    protected $verbs;
-
-    /** @var Collection */
-    protected $adjectives;
-
-    /** @var Collection */
-    protected $nouns;
-
-    public function __construct()
-    {
-        $this->verbs = new Collection(self::VERBS);
-        $this->adjectives = new Collection(self::ADJECTIVES);
-        $this->nouns = new Collection(self::NOUNS);
-    }
-
     /**
      * Handle the incoming request.
      *
@@ -61,9 +45,9 @@ class Busy
     {
         $botman->reply(
             sprintf('%s %s %s',
-                $this->verbs->random(),
-                $this->adjectives->random(),
-                $this->nouns->random()
+                Collection::make(self::VERBS)->random(),
+                Collection::make(self::ADJECTIVES)->random(),
+                Collection::make(self::NOUNS)->random()
             )
         );
     }
