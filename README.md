@@ -64,3 +64,14 @@ or from within the Docker container:
 ### Create application tunnel via ngrok
 
     ngrok http -host-header=rewrite http://icbot.local:80
+
+
+Troubleshooting
+---------------
+
+Please report bugs to the [GitHub Issue Tracker](https://github.com/TheInnerCircleO/icbot-2/issues).
+
+Copyright
+---------
+
+This project is licensed under the [MIT License](https://github.com/TheInnerCircleO/icbot-2/blob/master/LICENSE).
