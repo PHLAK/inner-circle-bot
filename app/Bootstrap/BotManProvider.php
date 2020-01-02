@@ -9,6 +9,7 @@ use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\Drivers\Telegram\TelegramDriver;
 use DI\Container;
 use PHLAK\Config\Config;
+use Psr\Log\LoggerInterface;
 
 class BotManProvider extends Provider
 {
@@ -18,15 +19,21 @@ class BotManProvider extends Provider
     /** @var Config The application config */
     protected $config;
 
+    /** @var LoggerInterface The application logger */
+    protected $logger;
+
     /**
      * Create a new BotmanProvider object.
      *
-     * @param \DI\Container $container
+     * @param \DI\Container            $container
+     * @param \PHLAK\Config\Config     $config
+     * @param \Psr\Log\LoggerInterface $logger
      */
-    public function __construct(Container $container, Config $config)
+    public function __construct(Container $container, Config $config, LoggerInterface $logger)
     {
         $this->container = $container;
         $this->config = $config;
+        $this->logger = $logger;
     }
 
     /**
@@ -43,6 +50,7 @@ class BotManProvider extends Provider
                 $this->config->split('botman')->toArray()
             );
 
+            $botman->middleware->received(new Middleware\LogCommand($this->logger));
             $botman->middleware->received(new Middleware\StripLeadingSlash);
             $botman->middleware->received(new Middleware\StripBotName($this->config));
 

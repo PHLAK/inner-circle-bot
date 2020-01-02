@@ -19,6 +19,7 @@ $container->set('base_path', dirname(__DIR__));
 
 // Configure the application componentes
 $container->call(Bootstrap\ConfigProvider::class);
+$container->call(Bootstrap\LoggingProvider::class);
 $container->call(Bootstrap\BotManProvider::class);
 
 // Register bot commands
