@@ -2,12 +2,12 @@
 
 use App\Bootstrap;
 use App\Commands;
+use App\Controllers;
 use App\Support\Helpers;
 use BotMan\BotMan\BotMan;
 use DI\Bridge\Slim\Bridge;
 use DI\Container;
 use Dotenv\Dotenv;
-use Slim\Psr7\Response;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -42,11 +42,7 @@ $container->call(function (BotMan $botman) {
 $app = Bridge::create($container);
 
 // Register web routes
-$app->post(Helpers::webhookEndpoint(), function (BotMan $botman, Response $response) {
-    $botman->listen();
-
-    return $response;
-});
+$app->post('/' . Helpers::env('TELEGRAM_TOKEN'), Controllers\Telegram::class);
 
 // Enagage!
 $app->run();
