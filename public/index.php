@@ -2,6 +2,7 @@
 
 use App\Bootstrap;
 use App\Commands;
+use App\Support\Helpers;
 use BotMan\BotMan\BotMan;
 use DI\Bridge\Slim\Bridge;
 use DI\Container;
@@ -41,7 +42,7 @@ $container->call(function (BotMan $botman) {
 $app = Bridge::create($container);
 
 // Register web routes
-$app->post('/', function (BotMan $botman, Response $response) {
+$app->post(Helpers::webhookEndpoint(), function (BotMan $botman, Response $response) {
     $botman->listen();
 
     return $response;

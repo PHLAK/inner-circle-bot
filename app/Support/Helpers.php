@@ -31,4 +31,14 @@ class Helpers
 
         return preg_replace('/^"(.*)"$/', '$1', $value);
     }
+
+    /**
+     * Return the webhook endpoint.
+     *
+     * @return string
+     */
+    public static function webhookEndpoint(): string
+    {
+        return sprintf('/%s', self::env('ENDPOINT_HASH', ''));
+    }
 }

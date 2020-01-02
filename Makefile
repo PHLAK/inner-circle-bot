@@ -4,6 +4,9 @@ build: # Build the application
 dev: # Build the application with dev dependencies
 	@compser install
 
+hash: # Generate an endpoint hash
+	@dd if=/dev/urandom bs=4096 count=1 status=none | sha1sum
+
 update upgrade: # Upgrade application dependencies
 	@composer update
 
