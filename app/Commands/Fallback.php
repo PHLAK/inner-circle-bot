@@ -3,7 +3,6 @@
 namespace App\Commands;
 
 use BotMan\BotMan\BotMan;
-use Tightenco\Collect\Support\Collection;
 
 class Fallback
 {
@@ -30,6 +29,6 @@ class Fallback
      */
     public function __invoke(BotMan $botman): void
     {
-        $botman->reply(Collection::make(self::REPLIES)->random());
+        $botman->randomReply(self::REPLIES);
     }
 }
