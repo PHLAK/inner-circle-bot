@@ -68,8 +68,8 @@ or from within the Docker container:
 ### Set the Telegram bot webhook URL
 
     curl --request POST --header 'content-type: application/json' \
-        --data '{"url": "{{ NGROK_URL }}"}' \
-        https://api.telegram.org/bot{{ TELEGRAM_TOKEN }}/setWebhook
+        --url https://api.telegram.org/bot{{ TELEGRAM_TOKEN }}/setWebhook \
+        --data '{"url": "{{ NGROK_URL }}"}'
 
 For more info, see <https://core.telegram.org/bots/api#setwebhook>
 
