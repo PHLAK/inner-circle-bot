@@ -10,7 +10,7 @@ use BotMan\Drivers\Telegram\TelegramDriver;
 use DI\Container;
 use PHLAK\Config\Config;
 
-class BotManProvider
+class BotManProvider extends Provider
 {
     /** @var Container The application container */
     protected $container;
@@ -30,11 +30,11 @@ class BotManProvider
     }
 
     /**
-     * Set up and configure Botman.
+     * Register and configure BotMan.
      *
      * @return void
      */
-    public function __invoke()
+    public function __invoke(): void
     {
         $this->container->set(BotMan::class, function (): BotMan {
             DriverManager::loadDriver(TelegramDriver::class);
