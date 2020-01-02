@@ -50,9 +50,10 @@ class BotManProvider extends Provider
                 $this->config->split('botman')->toArray()
             );
 
-            $botman->middleware->received(new Middleware\LogCommand($this->logger));
+            $botman->middleware->received(new Middleware\LogMessage($this->logger));
             $botman->middleware->received(new Middleware\StripLeadingSlash);
             $botman->middleware->received(new Middleware\StripBotName($this->config));
+            $botman->middleware->sending(new Middleware\LogResponse($this->logger));
 
             return $botman;
         });

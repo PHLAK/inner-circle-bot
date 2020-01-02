@@ -7,7 +7,7 @@ use BotMan\BotMan\Interfaces\Middleware\Received;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use Psr\Log\LoggerInterface;
 
-class LogCommand implements Received
+class LogMessage implements Received
 {
     /** @var LoggerInterface */
     protected $log;
@@ -33,7 +33,7 @@ class LogCommand implements Received
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {
-        $this->log->info(sprintf('Incomming command: %s', $message->getText()));
+        $this->log->info('Incomming message', (array) $message->getPayload());
 
         return $next($message);
     }
