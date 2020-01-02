@@ -65,6 +65,13 @@ or from within the Docker container:
 
     ngrok http -host-header=rewrite http://icbot.local:80
 
+### Set the Telegram bot webhook URL
+
+    curl --request POST --header 'content-type: application/json' \
+        --data '{"url": "{{ NGROK_URL }}"}' \
+        https://api.telegram.org/bot{{ TELEGRAM_TOKEN }}/setWebhook
+
+For more info, see <https://core.telegram.org/bots/api#setwebhook>
 
 Troubleshooting
 ---------------
