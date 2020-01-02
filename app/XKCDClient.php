@@ -10,6 +10,11 @@ class XKCDClient
     /** @var Client The Guzzle HTTP client */
     protected $client;
 
+    /**
+     * Create a new XKCDClient object.
+     *
+     * @param array $config
+     */
     public function __construct(array $config = [])
     {
         $this->client = new Client(array_replace_recursive([
