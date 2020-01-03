@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use BotMan\BotMan\BotMan;
+use Tightenco\Collect\Support\Collection;
 
 class Roll
 {
@@ -21,8 +22,13 @@ class Roll
             sprintf('Rolling %d × %d sided %s...', $dice, $sides, $dice > 1 ? 'dice' : 'die')
         );
 
+        $rolls = new Collection();
         for ($i = 1; $i <= $dice; ++$i) {
-            $botman->reply((string) rand(1, $sides));
+            $rolls->add(rand(1, $sides));
         }
+
+        $botman->reply(
+            sprintf('[ %s ] Total: %d', $rolls->implode(', '), $rolls->sum())
+        );
     }
 }
