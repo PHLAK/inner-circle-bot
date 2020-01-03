@@ -21,12 +21,6 @@ class Dilbert
      */
     public function __invoke(BotMan $botman, string $date = null)
     {
-        if (Carbon::parse($date)->lt(Carbon::parse(self::START_DATE))) {
-            $botman->reply('ERROR: Date out of range');
-
-            return;
-        }
-
         switch ($date) {
             case 'random':
                 $date = Collection::make(
@@ -36,6 +30,12 @@ class Dilbert
 
             default:
                 $date = Carbon::parse($date, 'America/Phoenix');
+
+                if ($date->lt(Carbon::parse(self::START_DATE))) {
+                    $botman->reply('ERROR: Date out of range');
+
+                    return;
+                }
                 break;
         }
 
