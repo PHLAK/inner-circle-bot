@@ -11,7 +11,7 @@ use DI\Container;
 use PHLAK\Config\Config;
 use Psr\Log\LoggerInterface;
 
-class BotManProvider extends Provider
+class BotManProvider
 {
     /** @var Container The application container */
     protected $container;

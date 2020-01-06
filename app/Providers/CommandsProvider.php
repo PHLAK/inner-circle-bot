@@ -7,7 +7,7 @@ use BotMan\BotMan\BotMan;
 use PHLAK\Config\Config;
 use Tightenco\Collect\Support\Collection;
 
-class CommandsProvider extends Provider
+class CommandsProvider
 {
     /** @var BotMan The BotMan component */
     protected $botman;

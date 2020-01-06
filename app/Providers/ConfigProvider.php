@@ -2,10 +2,24 @@
 
 namespace App\Providers;
 
+use DI\Container;
 use PHLAK\Config\Config;
 
-class ConfigProvider extends Provider
+class ConfigProvider
 {
+    /** @var Container The applicaiton container */
+    protected $container;
+
+    /**
+     * Create a new ConfigProvider object.
+     *
+     * @param \DI\Container $container
+     */
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * Register the application config.
      *

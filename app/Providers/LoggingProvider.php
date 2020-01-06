@@ -2,12 +2,26 @@
 
 namespace App\Providers;
 
+use DI\Container;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 
-class LoggingProvider extends Provider
+class LoggingProvider
 {
+    /** @var Container The applicaiton container */
+    protected $container;
+
+    /**
+     * Create a new LoggingProvider object.
+     *
+     * @param \DI\Container $container
+     */
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * Register the application logging component.
      *
