@@ -1,0 +1,18 @@
+preset: laravel
+
+risky: false
+
+enabled:
+  - concat_with_spaces
+
+disabled:
+  - concat_without_spaces
+
+finder:
+  exclude:
+    - "vendor"
+  name:
+    - "*.php"
+  path:
+    - "app"
+    - "tests"
