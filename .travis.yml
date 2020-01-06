@@ -1,0 +1,24 @@
+sudo: false
+
+language: php
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - nightly
+
+matrix:
+  allow_failures:
+    - php: nightly
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - vendor
+
+before_install:
+  - phpenv config-rm xdebug.ini || true
+
+install:
+  - composer install
