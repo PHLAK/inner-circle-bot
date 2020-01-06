@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Bootstrap;
+namespace App\Providers;
 
 use PHLAK\Config\Config;
 

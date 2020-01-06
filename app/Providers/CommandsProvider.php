@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Bootstrap;
+namespace App\Providers;
 
 use App\Commands;
 use BotMan\BotMan\BotMan;
