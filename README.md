@@ -7,7 +7,7 @@
 Requirements
 ------------
 
-  - [PHP](https://secure.php.net/) >= 7.1
+  - [PHP](https://secure.php.net/) >= 7.3
 
 #### For development
 
