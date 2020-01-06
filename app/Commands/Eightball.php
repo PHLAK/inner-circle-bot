@@ -3,7 +3,6 @@
 namespace App\Commands;
 
 use BotMan\BotMan\BotMan;
-use Tightenco\Collect\Support\Collection;
 
 class Eightball
 {
@@ -39,8 +38,8 @@ class Eightball
      *
      * @return void
      */
-    public function __invoke(BotMan $botman, string $question)
+    public function __invoke(BotMan $botman)
     {
-        $botman->reply(Collection::make(self::ANSWERS)->random());
+        $botman->randomReply(self::ANSWERS);
     }
 }

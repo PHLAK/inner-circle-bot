@@ -13,7 +13,7 @@ return [
     'commands' => [
         'busy' => Commands\Busy::class,
         'dilbert(?: (.+))?' => Commands\Dilbert::class,
-        'eightball {question}' => Commands\Eightball::class,
+        'eightball(?: (.+))?' => Commands\Eightball::class,
         'ping' => Commands\Ping::class,
         'roll ([0-9]+)d([0-9]+)' => Commands\Roll::class,
         'slap {name}' => Commands\Slap::class,
