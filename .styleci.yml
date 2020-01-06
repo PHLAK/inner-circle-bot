@@ -7,7 +7,7 @@ enabled:
 
 disabled:
   - concat_without_spaces
-  - pre_increment
+  - post_increment
   - trailing_comma_in_multiline_array
 
 finder:
