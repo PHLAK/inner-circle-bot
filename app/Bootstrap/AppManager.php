@@ -6,6 +6,7 @@ use App\Providers;
 use DI\Bridge\Slim\Bridge;
 use DI\Container;
 use PHLAK\Config\Config;
+use RuntimeException;
 use Slim\App;
 use Tightenco\Collect\Support\Collection;
 
@@ -51,6 +52,8 @@ class AppManager
     /**
      * Register application providers.
      *
+     * @throws RuntimeException
+     *
      * @return void
      */
     protected function registerProviders(): void
@@ -58,6 +61,10 @@ class AppManager
         Collection::make(self::PROVIDERS)->merge(
             $this->config->get('app.providers', [])
         )->each(function (string $provider) {
+            if (! is_callable($provider)) {
+                throw new RuntimeException(sprintf('%s is not callable', $provider));
+            }
+
             $this->container->call($provider);
         });
     }
