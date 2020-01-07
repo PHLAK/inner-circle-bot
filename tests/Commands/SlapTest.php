@@ -12,12 +12,9 @@ class SlapTest extends TestCase
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
-            $this->callback(function (string $argument): bool {
-                return (bool) preg_match(
-                    '/<i>slaps Arthur Dent around a bit with (?:a big black cock|an iron gauntlet|a large trout|a soggy noodle)<\/i>/',
-                    $argument
-                );
-            }),
+            $this->matchesRegularExpression(
+                '/<i>slaps Arthur Dent around a bit with (?:a big black cock|an iron gauntlet|a large trout|a soggy noodle)<\/i>/'
+            ),
             ['parse_mode' => 'HTML']
         );
 

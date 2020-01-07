@@ -28,13 +28,9 @@ class RollTest extends TestCase
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->exactly(2))->method('reply')->withConsecutive([
-            $this->callback(function (string $argument): bool {
-                return (bool) preg_match('/Rolling 2 × 20 sided dice.../', $argument);
-            })
+            $this->matchesRegularExpression('/Rolling 2 × 20 sided dice.../')
         ], [
-            $this->callback(function (string $argument): bool {
-                return (bool) preg_match('/\[ \d+, \d+ \] Total: \d+/', $argument);
-            })
+            $this->matchesRegularExpression('/\[ \d+, \d+ \] Total: \d+/')
         ]);
 
         (new Roll())($botman, 2, 20);
