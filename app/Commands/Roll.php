@@ -18,6 +18,20 @@ class Roll
      */
     public function __invoke(BotMan $botman, int $dice, int $sides)
     {
+        if ($dice > 9999) {
+            $botman->reply('I am not able to hold that many dice at once');
+
+            return;
+        }
+
+        if ($sides > 999999999999) {
+            $botman->reply(
+                sprintf('I seem to have misplaced my %d sided die', $sides)
+            );
+
+            return;
+        }
+
         $botman->reply(
             sprintf('Rolling %d × %d sided %s...', $dice, $sides, $dice > 1 ? 'dice' : 'die')
         );

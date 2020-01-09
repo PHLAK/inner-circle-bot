@@ -35,4 +35,24 @@ class RollTest extends TestCase
 
         (new Roll())($botman, 2, 20);
     }
+
+    public function test_it_limits_the_number_of_dice_rolled(): void
+    {
+        $botman = $this->createMock(BotMan::class);
+        $botman->expects($this->once())->method('reply')->with(
+            'I am not able to hold that many dice at once'
+        );
+
+        (new Roll())($botman, 10000, 20);
+    }
+
+    public function test_it_limits_the_maximum_die_value(): void
+    {
+        $botman = $this->createMock(BotMan::class);
+        $botman->expects($this->once())->method('reply')->with(
+            'I seem to have misplaced my 1000000000000 sided die'
+        );
+
+        (new Roll())($botman, 1, 1000000000000);
+    }
 }
