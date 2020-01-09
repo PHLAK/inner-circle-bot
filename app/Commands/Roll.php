@@ -24,9 +24,9 @@ class Roll
             return;
         }
 
-        if ($sides > 999999999999) {
+        if ($sides >= PHP_INT_MAX) {
             $botman->reply(
-                sprintf('I seem to have misplaced my %d sided die', $sides)
+                sprintf('I seem to have misplaced my %s sided die', $sides)
             );
 
             return;
