@@ -20,6 +20,8 @@ class LogResponseTest extends TestCase
 
         $middleware->sending(json_decode(
             '{"chat_id": 1337, "text": "Test response; please ignore"}'
-        ), function ($payload) { return $payload; }, $this->botman);
+        ), function ($payload) {
+            return $payload;
+        }, $this->botman);
     }
 }
