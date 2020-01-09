@@ -50,9 +50,9 @@ class RollTest extends TestCase
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
-            'I seem to have misplaced my 9223372036854775807 sided die'
+            'I seem to have misplaced my 1000000000 sided die'
         );
 
-        (new Roll())($botman, 1, PHP_INT_MAX);
+        (new Roll())($botman, 1, 1000000000);
     }
 }
