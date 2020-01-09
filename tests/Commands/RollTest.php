@@ -43,7 +43,7 @@ class RollTest extends TestCase
             'I am not able to hold that many dice at once'
         );
 
-        (new Roll())($botman, 10000, 20);
+        (new Roll())($botman, 301, 20);
     }
 
     public function test_it_limits_the_maximum_die_value(): void

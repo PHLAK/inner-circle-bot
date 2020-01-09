@@ -18,7 +18,7 @@ class Roll
      */
     public function __invoke(BotMan $botman, int $dice, int $sides)
     {
-        if ($dice > 9999) {
+        if ($dice > 300) {
             $botman->reply('I am not able to hold that many dice at once');
 
             return;
