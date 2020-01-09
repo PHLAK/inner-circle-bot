@@ -19,7 +19,7 @@ class StripLeadingSlash implements Received
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {
-        preg_match('/\/(.+)/', $message->getText(), $matches);
+        preg_match('/\/?(.+)/', $message->getText(), $matches);
         $message->setText($matches[1]);
 
         return $next($message);
