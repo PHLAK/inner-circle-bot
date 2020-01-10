@@ -21,13 +21,13 @@ class SMBC
      * Handle the incoming request.
      *
      * @param \BotMan\BotMan\BotMan $botman
-     * @param string|null           $id
+     * @param \App\SMBCClient       $smbc
      *
      * @return void
      */
-    public function __invoke(BotMan $botman, ?string $id = null)
+    public function __invoke(BotMan $botman, ?SMBCCLient $smbc = null)
     {
-        $comic = $this->smbc->latest();
+        $comic = ($smbc ?? new SMBCClient())->latest();
 
         $botman->reply(OutgoingMessage::create(
                 sprintf('<strong>%s</strong> • %s', $comic->title, $comic->alt_text)
