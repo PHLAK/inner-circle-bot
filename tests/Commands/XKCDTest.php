@@ -7,6 +7,8 @@ use App\XKCDClient;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Request;
 use Tests\TestCase;
 
 class XKCDTest extends TestCase
@@ -37,6 +39,21 @@ class XKCDTest extends TestCase
                 'title' => 'Test comic; please ignore',
                 'day' => '20',
             ]
+        );
+
+        (new XKCD())($botman, null, $xkcd);
+    }
+
+    public function test_it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void
+    {
+        $botman = $this->createMock(BotMan::class);
+        $botman->expects($this->once())->method('reply')->with(
+            "ERROR: Failed to fetch comic [418 I'm a teapot]"
+        );
+
+        $xkcd = $this->createMock(XKCDClient::class);
+        $xkcd->expects($this->once())->method('latest')->willThrowException(
+            new ClientException("418 I'm a teapot", $this->createMock(Request::class))
         );
 
         (new XKCD())($botman, null, $xkcd);
