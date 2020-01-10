@@ -51,4 +51,18 @@ class TestCase extends PHPUnitTestCase
             $this->config->split('botman')->toArray()
         );
     }
+
+    /**
+     * Get the path to a test file.
+     *
+     * @param string $file
+     *
+     * @return string
+     */
+    protected function path(string $file): string
+    {
+        return realpath(
+            __DIR__ . DIRECTORY_SEPARATOR . '_data' . DIRECTORY_SEPARATOR . $file
+        );
+    }
 }

@@ -7,8 +7,18 @@ use stdClass;
 
 class SMBCClient
 {
-    /** @const Constant description */
-    protected const RSS_URL = 'https://www.smbc-comics.com/comic/rss';
+    /** @var string The SMBC RSS feed URL */
+    protected $rssUrl;
+
+    /**
+     * Create a new SMBCClient object.
+     *
+     * @param string $rssUrl
+     */
+    public function __construct(string $rssUrl = 'https://www.smbc-comics.com/comic/rss')
+    {
+        $this->rssUrl = $rssUrl;
+    }
 
     /**
      * Fetch the latest comic.
@@ -17,7 +27,7 @@ class SMBCClient
      */
     public function latest(): stdClass
     {
-        $xml = new SimpleXMLElement(file_get_contents(self::RSS_URL));
+        $xml = new SimpleXMLElement(file_get_contents($this->rssUrl));
         $comic = $xml->channel->item[0];
 
         preg_match('/^Saturday Morning Breakfast Cereal - (.*)$/', $comic->title, $matches);

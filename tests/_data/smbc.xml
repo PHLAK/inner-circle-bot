@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Saturday Morning Breakfast Cereal</title>
+        <atom:link href="https://www.smbc-comics.com/comic/rss" rel="self" type="application/rss+xml" />
+        <link>https://www.smbc-comics.com/</link>
+        <description>Test Saturday Morning Breakfast Cereal comics and news</description>
+        <language>en-us</language>
+        <item>
+            <title><![CDATA[Saturday Morning Breakfast Cereal - Test comic; please ignore]]></title>
+            <description><![CDATA[<a href="https://www.smbc-comics.com/comic/test"><img src="https://www.smbc-comics.com/comics/1234567890-19860520.png" /><br /><br />Click here to go see the bonus panel!</a><p>Hovertext:<br/>Some test alt-text.</p><br />Today's News:<br />]]></description>
+            <link>https://www.smbc-comics.com/comic/test</link>
+            <author>test@example.com</author>
+            <pubDate>Tue, 20 May 1986 12:34:56 -0500</pubDate>
+            <guid>https://www.smbc-comics.com/comic/test</guid>
+        </item>
+        <item>
+            <title><![CDATA[Saturday Morning Breakfast Cereal - Yet another comic]]></title>
+            <description><![CDATA[<a href="https://www.smbc-comics.com/comic/another-test"><img src="https://www.smbc-comics.com/comics/9876543210-19860519.png" /><br /><br />Click here to go see the bonus panel!</a><p>Hovertext:<br/>Some other alt-text.</p><br />Today's News:<br />]]></description>
+            <link>https://www.smbc-comics.com/comic/another-test</link>
+            <author>test@example.com</author>
+            <pubDate>Mon, 19 May 1987 12:34:56 -0500</pubDate>
+            <guid>https://www.smbc-comics.com/comic/another-test</guid>
+        </item>
+    </channel>
+</rss>
