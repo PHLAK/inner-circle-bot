@@ -10,26 +10,21 @@ use GuzzleHttp\Exception\ClientException;
 
 class XKCD
 {
-    /** @var XKCDClient The XKCD HTTP client */
-    protected $xkcd;
-
-    public function __construct()
-    {
-        $this->xkcd = new XKCDClient();
-    }
-
     /**
      * Handle the incoming request.
      *
      * @param \BotMan\BotMan\BotMan $botman
      * @param int|null              $id
+     * @param \App\XKCDClient|null  $xkcd
      *
      * @return void
      */
-    public function __invoke(BotMan $botman, ?int $id = null)
+    public function __invoke(BotMan $botman, ?int $id = null, ?XKCDClient $xkcd = null)
     {
+        $xkcd = $xkcd ?? new XKCDClient();
+
         try {
-            $comic = $id ? $this->xkcd->byId($id) : $this->xkcd->latest();
+            $comic = $id ? $xkcd->byId($id) : $xkcd->latest();
         } catch (ClientException $exception) {
             $botman->reply(
                 sprintf('ERROR: Failed to fetch comic [%s]', $exception->getMessage())
