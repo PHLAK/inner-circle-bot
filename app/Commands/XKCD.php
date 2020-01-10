@@ -39,9 +39,9 @@ class XKCD
         }
 
         $botman->reply(OutgoingMessage::create(
-            sprintf('%s - %s', $comic->safe_title, $comic->alt)
+            sprintf('<strong>%s</strong> • %s', $comic->safe_title, $comic->alt, $comic->num)
         )->withAttachment(
             new Image($comic->img)
-        ));
+        ), ['parse_mode' => 'HTML']);
     }
 }
