@@ -17,6 +17,7 @@ return [
         'ping' => Commands\Ping::class,
         'roll ([0-9]+)d([0-9]+)' => Commands\Roll::class,
         'slap {name}' => Commands\Slap::class,
+        'smbc' => Commands\SMBC::class,
         'xkcd(?: ([0-9]+))?' => Commands\XKCD::class,
     ],
 ];
