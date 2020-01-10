@@ -1,4 +1,4 @@
-NGROK_URL="$$(curl --silent http://localhost:4040/api/tunnels | jq --raw-output '.tunnels[0].public_url')"
+NGROK_URL="$$(curl --silent http://localhost:4040/api/tunnels/command_line | jq --raw-output '.public_url')"
 TELEGRAM_TOKEN="$$(grep 'TELEGRAM_TOKEN' .env | awk -F = '{print $$2}')"
 
 build: # Build the application
