@@ -78,7 +78,7 @@ List of Commands
 
     busy - Generate a random "busy" message
     dilbert - Get a Dilbert comic (`/dilbert [YYYY-MM-DD | random]`)
-    eightball - Consult the Magic Eightball (`/eightball <question>`)
+    eightball - Consult the Magic Eightball (`/eightball [question]`)
     ping - Verify bot connectivity
     roll - Roll some dice (`/bot roll [ 2d6 | 1d10 | etc ]`)
     slap - Slap somone around a bit (`slap <name>`)
