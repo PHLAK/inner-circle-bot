@@ -123,9 +123,9 @@ class DilbertClient
      */
     protected function extractDescription(string $html): string
     {
-        preg_match('/<meta\s*property="og:description"\s*content="(?<description>.*)"\s*\/>/', $html, $matches);
+        preg_match('/<meta\s*property="og:description"\s*content="(?<description>.*)"\s*\/>/sU', $html, $matches);
 
-        return $matches['description'];
+        return $matches['description'] ?? '';
     }
 
     /**

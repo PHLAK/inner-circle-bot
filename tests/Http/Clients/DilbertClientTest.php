@@ -16,7 +16,7 @@ class DilbertClientTest extends TestCase
         $comic = $this->mockDilbertClient()->latest();
 
         $this->assertEquals('Test comic; please ignore', $comic->title);
-        $this->assertEquals('Some test description.', $comic->altText);
+        $this->assertEquals('Some test description.\nAnd a second line.', $comic->altText);
         $this->assertEquals('http://assets.amuniversal.com/test', $comic->imageUrl);
         $this->assertEquals('http://dilbert.com/strip/1986-05-20', $comic->sourceUrl);
     }
@@ -28,7 +28,7 @@ class DilbertClientTest extends TestCase
         );
 
         $this->assertEquals('Test comic; please ignore', $comic->title);
-        $this->assertEquals('Some test description.', $comic->altText);
+        $this->assertEquals('Some test description.\nAnd a second line.', $comic->altText);
         $this->assertEquals('http://assets.amuniversal.com/test', $comic->imageUrl);
         $this->assertEquals('http://dilbert.com/strip/1986-05-20', $comic->sourceUrl);
     }
@@ -38,7 +38,7 @@ class DilbertClientTest extends TestCase
         $comic = $this->mockDilbertClient()->random();
 
         $this->assertEquals('Test comic; please ignore', $comic->title);
-        $this->assertEquals('Some test description.', $comic->altText);
+        $this->assertEquals('Some test description.\nAnd a second line.', $comic->altText);
         $this->assertEquals('http://assets.amuniversal.com/test', $comic->imageUrl);
         $this->assertEquals('http://dilbert.com/strip/1986-05-20', $comic->sourceUrl);
     }
