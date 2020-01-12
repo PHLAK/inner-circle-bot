@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace Tests\Http\Clients;
 
+use App\Http\Clients\XKCDClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
@@ -11,9 +12,7 @@ class XKCDClientTest extends TestCase
 {
     public function test_it_can_fetch_the_latest_comic(): void
     {
-        $xkcd = $this->mockXKCDCLient();
-
-        $comic = $xkcd->latest();
+        $comic = $this->mockXKCDCLient()->latest();
 
         $this->assertEquals(1337, $comic->num);
         $this->assertEquals('Test title; please ignore', $comic->safe_title);
@@ -23,9 +22,7 @@ class XKCDClientTest extends TestCase
 
     public function test_it_can_fetch_a_comic_by_id(): void
     {
-        $xkcd = $this->mockXKCDCLient();
-
-        $comic = $xkcd->byId(1337);
+        $comic = $this->mockXKCDCLient()->byId(1337);
 
         $this->assertEquals(1337, $comic->num);
         $this->assertEquals('Test title; please ignore', $comic->safe_title);
@@ -33,6 +30,13 @@ class XKCDClientTest extends TestCase
         $this->assertEquals('https://imgs.xkcd.com/comics/example.png', $comic->img);
     }
 
+    /**
+     * Create a mocked XKCDClient object.
+     *
+     * @param array $responses
+     *
+     * @return \App\Http\Clients\XKCDClient
+     */
     protected function mockXKCDCLient(array $responses = null): XKCDClient
     {
         return new XKCDClient([

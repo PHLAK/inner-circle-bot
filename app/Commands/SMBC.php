@@ -2,21 +2,14 @@
 
 namespace App\Commands;
 
-use App\SMBCClient;
+use App\Http\Clients\SMBCClient;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+use GuzzleHttp\Exception\ClientException;
 
 class SMBC
 {
-    /** @var SMBCClient The SMBC HTTP client */
-    protected $smbc;
-
-    public function __construct()
-    {
-        $this->smbc = new SMBCClient();
-    }
-
     /**
      * Handle the incoming request.
      *
@@ -25,14 +18,22 @@ class SMBC
      *
      * @return void
      */
-    public function __invoke(BotMan $botman, ?SMBCCLient $smbc = null)
+    public function __invoke(BotMan $botman, ?SMBCClient $smbc = null)
     {
-        $comic = ($smbc ?? new SMBCClient())->latest();
+        try {
+            $comic = ($smbc ?? new SMBCClient)->latest();
+        } catch (ClientException $exception) {
+            $botman->reply(
+                sprintf('ERROR: Failed to fetch comic [%s]', $exception->getMessage())
+            );
+
+            return;
+        }
 
         $botman->reply(OutgoingMessage::create(
-                sprintf('<strong>%s</strong> • %s', $comic->title, $comic->alt_text)
+                sprintf('<strong>%s</strong> • %s', $comic->title, $comic->altText)
         )->withAttachment(
-            new Image($comic->image)
+            new Image($comic->imageUrl)
         ), ['parse_mode' => 'HTML']);
     }
 }

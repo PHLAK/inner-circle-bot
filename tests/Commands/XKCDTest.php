@@ -3,7 +3,7 @@
 namespace Tests\Commands;
 
 use App\Commands\XKCD;
-use App\XKCDClient;
+use App\Http\Clients\XKCDClient;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;

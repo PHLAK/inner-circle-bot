@@ -2,7 +2,7 @@
 
 namespace App\Commands;
 
-use App\XKCDClient;
+use App\Http\Clients\XKCDClient;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
@@ -34,7 +34,7 @@ class XKCD
         }
 
         $botman->reply(OutgoingMessage::create(
-            sprintf('<strong>%s</strong> • %s', $comic->safe_title, $comic->alt, $comic->num)
+            sprintf('<strong>%s</strong> • %s', $comic->safe_title, $comic->alt)
         )->withAttachment(
             new Image($comic->img)
         ), ['parse_mode' => 'HTML']);

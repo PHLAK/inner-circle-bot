@@ -2,43 +2,54 @@
 
 namespace App\Commands;
 
+use App\Http\Clients\DilbertClient;
 use BotMan\BotMan\BotMan;
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use Carbon\Carbon;
-use Tightenco\Collect\Support\Collection;
+use GuzzleHttp\Exception\ClientException;
 
 class Dilbert
 {
-    /** @const The date of the earliest comic */
-    protected const START_DATE = '1989-04-16';
-
     /**
      * Handle the incoming request.
      *
-     * @param \BotMan\BotMan\BotMan $botman
-     * @param string                $date
+     * @param \BotMan\BotMan\BotMan           $botman
+     * @param string                          $date
+     * @param \App\Http\Clients\DilbertClient $dilbert
      *
      * @return void
      */
-    public function __invoke(BotMan $botman, string $date = null)
+    public function __invoke(BotMan $botman, string $date = null, ?DilbertClient $dilbert = null)
     {
-        switch ($date) {
-            case 'random':
-                $date = Collection::make(
-                    Carbon::parse(self::START_DATE)->daysUntil(Carbon::now())
-                )->random();
-                break;
+        $dilbert = $dilbert ?? new DilbertClient();
 
-            default:
-                $date = Carbon::parse($date, 'America/Phoenix');
+        try {
+            switch ($date) {
+                case null:
+                    $comic = $dilbert->latest();
+                    break;
 
-                if ($date->lt(Carbon::parse(self::START_DATE))) {
-                    $botman->reply('ERROR: Date out of range');
+                case 'random':
+                    $comic = $dilbert->random();
+                    break;
 
-                    return;
-                }
-                break;
+                default:
+                    $comic = $dilbert->byDate(Carbon::parse($date, 'America/Phoenix'));
+                    break;
+            }
+        } catch (ClientException $exception) {
+            $botman->reply(
+                sprintf('ERROR: Failed to fetch comic [%s]', $exception->getMessage())
+            );
+
+            return;
         }
 
-        $botman->reply(sprintf('http://dilbert.com/strip/%s', $date->format('Y-m-d')));
+        $botman->reply(OutgoingMessage::create(
+            sprintf('<strong>%s</strong>', $comic->title)
+        )->withAttachment(
+            new Image($comic->imageUrl)
+        ), ['parse_mode' => 'HTML']);
     }
 }
