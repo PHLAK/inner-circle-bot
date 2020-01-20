@@ -86,6 +86,10 @@ List of Commands
     smbc - Fetch the latest smbc comic
     xkcd - Retrieve an XKCD comic (`/xkcd [id]`)
 
+> ℹ️ Parameters in angled brackets (<...>) are REQUIRED.
+
+> ℹ️ Parameters in square braces ([...]) are OPTIONAL.
+
 Troubleshooting
 ---------------
 
