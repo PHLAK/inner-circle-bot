@@ -9,6 +9,7 @@ use BotMan\BotMan\Drivers\Tests\ProxyDriver;
 use DI\Container;
 use PHLAK\Config\Config;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use RuntimeException;
 
 class TestCase extends PHPUnitTestCase
 {
@@ -29,7 +30,7 @@ class TestCase extends PHPUnitTestCase
     public function setUp(): void
     {
         $this->container = new Container();
-        $this->container->set('base_path', __DIR__ . '/data');
+        $this->container->set('base_path', $this->path('.'));
 
         $this->config = new Config([
             'app' => [
@@ -57,12 +58,20 @@ class TestCase extends PHPUnitTestCase
      *
      * @param string $file
      *
+     * @throws RuntimeException
+     *
      * @return string
      */
-    protected function path(string $file): string
+    protected function path(string $file = '.'): string
     {
-        return realpath(
+        $path = realpath(
             __DIR__ . DIRECTORY_SEPARATOR . '_data' . DIRECTORY_SEPARATOR . $file
         );
+
+        if ($path === false) {
+            throw new RuntimeException(sprintf('The file "%s" does not exist', $file));
+        }
+
+        return $path;
     }
 }

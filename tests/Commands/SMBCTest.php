@@ -35,7 +35,7 @@ class SMBCTest extends TestCase
             )
         );
 
-        (new SMBC())($botman, $smbc);
+        (new SMBC)($botman, $smbc);
     }
 
     public function test_it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void

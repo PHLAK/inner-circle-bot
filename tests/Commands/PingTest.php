@@ -13,6 +13,6 @@ class PingTest extends TestCase
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with('pong');
 
-        (new Ping())($botman);
+        (new Ping)($botman);
     }
 }

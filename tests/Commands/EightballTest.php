@@ -34,6 +34,6 @@ class EightballTest extends TestCase
             'Very doubtful'
         ]);
 
-        (new Eightball())($botman);
+        (new Eightball)($botman);
     }
 }

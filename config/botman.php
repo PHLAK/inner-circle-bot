@@ -12,6 +12,7 @@ return [
     /** Array of command patterns mapped to their class names */
     'commands' => [
         'busy' => Commands\Busy::class,
+        'coinflip' => Commands\Coinflip::class,
         'dilbert(?: (.+))?' => Commands\Dilbert::class,
         'eightball(?: (.+))?' => Commands\Eightball::class,
         'ping' => Commands\Ping::class,

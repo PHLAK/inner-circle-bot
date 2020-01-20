@@ -24,6 +24,6 @@ class FallbackTest extends TestCase
             '🤔',
         ]);
 
-        (new Fallback())($botman);
+        (new Fallback)($botman);
     }
 }

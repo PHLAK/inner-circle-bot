@@ -77,6 +77,7 @@ List of Commands
 ----------------
 
     busy - Generate a random "busy" message
+    coinflip - Flip a coin
     dilbert - Get a Dilbert comic (`/dilbert [YYYY-MM-DD | random]`)
     eightball - Consult the Magic Eightball (`/eightball [question]`)
     ping - Verify bot connectivity
