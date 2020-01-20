@@ -13,8 +13,8 @@ class SMBC
     /**
      * Handle the incoming request.
      *
-     * @param \BotMan\BotMan\BotMan $botman
-     * @param \App\SMBCClient       $smbc
+     * @param \BotMan\BotMan\BotMan        $botman
+     * @param \App\Http\Clients\SMBCClient $smbc
      *
      * @return void
      */

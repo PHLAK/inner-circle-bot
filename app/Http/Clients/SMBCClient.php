@@ -18,7 +18,7 @@ class SMBCClient
      */
     public function __construct(array $config = [])
     {
-        $this->client = new Client(array_replace_recursive([
+        $this->client = new Client((array) array_replace_recursive([
             'base_uri' => 'https://www.smbc-comics.com',
             'connect_timeout' => 5,
             'timeout' => 10,

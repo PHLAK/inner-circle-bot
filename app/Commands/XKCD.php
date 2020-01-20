@@ -13,9 +13,9 @@ class XKCD
     /**
      * Handle the incoming request.
      *
-     * @param \BotMan\BotMan\BotMan $botman
-     * @param int|null              $id
-     * @param \App\XKCDClient|null  $xkcd
+     * @param \BotMan\BotMan\BotMan             $botman
+     * @param int|null                          $id
+     * @param \App\Http\Clients\XKCDClient|null $xkcd
      *
      * @return void
      */
