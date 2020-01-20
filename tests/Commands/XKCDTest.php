@@ -41,7 +41,7 @@ class XKCDTest extends TestCase
             ]
         );
 
-        (new XKCD())($botman, null, $xkcd);
+        (new XKCD)($botman, null, $xkcd);
     }
 
     public function test_it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void
@@ -56,6 +56,6 @@ class XKCDTest extends TestCase
             new ClientException("418 I'm a teapot", $this->createMock(Request::class))
         );
 
-        (new XKCD())($botman, null, $xkcd);
+        (new XKCD)($botman, null, $xkcd);
     }
 }

@@ -18,6 +18,6 @@ class SlapTest extends TestCase
             ['parse_mode' => 'HTML']
         );
 
-        (new Slap())($botman, 'Arthur Dent');
+        (new Slap)($botman, 'Arthur Dent');
     }
 }

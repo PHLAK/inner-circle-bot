@@ -59,6 +59,6 @@ class BusyTest extends TestCase
             })
         );
 
-        (new Busy())($botman);
+        (new Busy)($botman);
     }
 }

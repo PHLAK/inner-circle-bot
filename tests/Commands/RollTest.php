@@ -21,7 +21,7 @@ class RollTest extends TestCase
             })
         ]);
 
-        (new Roll())($botman, 1, 100);
+        (new Roll)($botman, 1, 100);
     }
 
     public function test_it_can_roll_multiple_dice(): void
@@ -33,7 +33,7 @@ class RollTest extends TestCase
             $this->matchesRegularExpression('/\[ \d+, \d+ \] Total: \d+/')
         ]);
 
-        (new Roll())($botman, 2, 20);
+        (new Roll)($botman, 2, 20);
     }
 
     public function test_it_limits_the_number_of_dice_rolled(): void
@@ -43,7 +43,7 @@ class RollTest extends TestCase
             'I am not able to hold that many dice at once'
         );
 
-        (new Roll())($botman, 301, 20);
+        (new Roll)($botman, 301, 20);
     }
 
     public function test_it_limits_the_maximum_die_value(): void
@@ -53,6 +53,6 @@ class RollTest extends TestCase
             'I seem to have misplaced my 1000000000 sided die'
         );
 
-        (new Roll())($botman, 1, 1000000000);
+        (new Roll)($botman, 1, 1000000000);
     }
 }
