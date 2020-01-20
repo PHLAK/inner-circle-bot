@@ -1,11 +1,11 @@
 NGROK_URL="$$(curl --silent http://localhost:4040/api/tunnels/command_line | jq --raw-output '.public_url')"
 TELEGRAM_TOKEN="$$(grep 'TELEGRAM_TOKEN' .env | awk -F = '{print $$2}')"
 
-build: # Build the application
-	@composer install --no-dev
+dev development: # Build application for development
+	@composer install --no-interaction
 
-dev: # Build the application with dev dependencies
-	@compser install --dev
+prod production: # Build application for production
+	@composer install --no-dev --no-interaction --prefer-dist
 
 update upgrade: # Upgrade application dependencies
 	@composer update
