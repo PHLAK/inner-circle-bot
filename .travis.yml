@@ -16,8 +16,12 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
-before_install:
-  - phpenv config-rm xdebug.ini || true
+before_install: phpenv config-rm xdebug.ini || true
 
-install:
-  - composer install
+install: composer install
+
+before_script:
+  - php-cs-fixer fix --diff --dry-run
+  - psalm --show-info=false
+
+script: vendor/bin/phpunit --coverage-text
