@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="3.8.1@8e54e3aa060fc490d86d0e2abbf62750516d40fd">
-  <file src="app/Commands/XKCD.php">
-    <InvalidArgument occurrences="1"/>
-  </file>
-  <file src="app/Providers/BotManProvider.php">
-    <InvalidArgument occurrences="3">
-      <code>new Middleware\LogMessage($this-&gt;logger)</code>
-      <code>new Middleware\StripLeadingSlash</code>
-      <code>new Middleware\StripBotName($this-&gt;config)</code>
-    </InvalidArgument>
-  </file>
-</files>
+<files psalm-version="3.8.2@90d6b73fd8062432030ef39b7b6694b3902daa31"/>

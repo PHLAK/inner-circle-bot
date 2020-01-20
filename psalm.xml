@@ -15,6 +15,18 @@
     </projectFiles>
 
     <issueHandlers>
+        <InvalidArgument>
+            <errorLevel type="suppress">
+                <referencedFunction name="BotMan\BotMan\BotMan::reply" />
+                <directory name="app/Commands" />
+            </errorLevel>
+
+            <errorLevel type="suppress">
+                <referencedFunction name="BotMan\BotMan\Middleware\MiddlewareManager::received" />
+                <directory name="app/Middleware" />
+            </errorLevel>
+        </InvalidArgument>
+
         <LessSpecificReturnType errorLevel="info" />
 
         <!-- level 3 issues - slightly lazy code writing, but provably low false-negatives -->
