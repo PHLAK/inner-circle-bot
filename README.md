@@ -80,7 +80,7 @@ List of Commands
     coinflip - Flip a coin
     dilbert - Get a Dilbert comic (`/dilbert [YYYY-MM-DD | random]`)
     eightball - Consult the Magic Eightball (`/eightball [question]`)
-    explosm - Fetch an Explosm comic (`/explosm [id]`)
+    explosm - Fetch a Cyanide & Happiness comic (`/explosm [id]`)
     ping - Verify bot connectivity
     roll - Roll some dice (`/bot roll [ 2d6 | 1d10 | etc ]`)
     slap - Slap somone around a bit (`slap <name>`)
