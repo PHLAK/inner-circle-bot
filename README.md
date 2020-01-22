@@ -80,15 +80,17 @@ List of Commands
     coinflip - Flip a coin
     dilbert - Get a Dilbert comic (`/dilbert [YYYY-MM-DD | random]`)
     eightball - Consult the Magic Eightball (`/eightball [question]`)
+    explosm - Fetch an Explosm comic (`/explosm [id]`)
     ping - Verify bot connectivity
     roll - Roll some dice (`/bot roll [ 2d6 | 1d10 | etc ]`)
     slap - Slap somone around a bit (`slap <name>`)
     smbc - Fetch the latest smbc comic
     xkcd - Retrieve an XKCD comic (`/xkcd [id]`)
 
-> ℹ️ Parameters in angled brackets (<...>) are REQUIRED.
-
-> ℹ️ Parameters in square braces ([...]) are OPTIONAL.
+> #### ℹ️ Parameters
+>
+>   - Parameters in angled brackets (`<...>`) are REQUIRED.
+>   - Parameters in square braces (`[...]`) are OPTIONAL.
 
 Troubleshooting
 ---------------
