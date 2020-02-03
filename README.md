@@ -83,7 +83,7 @@ List of Commands
     explosm - Fetch a Cyanide & Happiness comic (`/explosm [id]`)
     ping - Verify bot connectivity
     roll - Roll some dice (`/roll [ 2d6 | 1d10 | etc ]`)
-    slap - Slap somone around a bit (`slap <name>`)
+    slap - Slap somone around a bit (`/slap <name>`)
     smbc - Fetch the latest smbc comic
     xkcd - Retrieve an XKCD comic (`/xkcd [id]`)
 
