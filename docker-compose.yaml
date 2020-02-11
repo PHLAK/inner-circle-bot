@@ -7,6 +7,7 @@ services:
       context: .
       target: development
     environment:
+      TZ: America/Phoenix
       VIRTUAL_HOST: icbot.local
     volumes:
       - ./:/var/www/html

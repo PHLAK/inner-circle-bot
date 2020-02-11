@@ -8,6 +8,7 @@ Requirements
 ------------
 
   - [PHP](https://secure.php.net/) >= 7.3
+    - PHP [Internationalization Extension](https://www.php.net/manual/en/intro.intl.php)
 
 #### For development
 
@@ -76,6 +77,7 @@ For more info, see <https://core.telegram.org/bots/api#setwebhook>
 List of Commands
 ----------------
 
+    btc - Get the market price (in USD) for bitcoin (`/btc [YYYY-MM-DD]`)
     busy - Generate a random "busy" message
     coinflip - Flip a coin
     dilbert - Get a Dilbert comic (`/dilbert [YYYY-MM-DD | random]`)

@@ -16,6 +16,8 @@ RUN a2enmod rewrite
 FROM application as development
 COPY ./.docker/php/config/php.dev.ini /usr/local/etc/php/php.ini
 COPY ./.docker/apache2/config/000-default.dev.conf /etc/apache2/sites-available/000-default.conf
+RUN apt-get update && apt-get --assume-yes install libicu-dev tzdata \
+    && docker-php-ext-configure intl && docker-php-ext-install intl
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Build production image

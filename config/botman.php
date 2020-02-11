@@ -11,6 +11,7 @@ return [
 
     /** Array of command patterns mapped to their class names */
     'commands' => [
+        'btc(?: (.+))?' => Commands\Btc::class,
         'busy' => Commands\Busy::class,
         'coinflip' => Commands\Coinflip::class,
         'dilbert(?: (.+))?' => Commands\Dilbert::class,
