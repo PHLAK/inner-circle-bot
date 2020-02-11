@@ -50,7 +50,7 @@ class Btc
      *
      * @return string
      */
-    private function formatCurrency(float $amount): string
+    protected function formatCurrency(float $amount): string
     {
         $formatter = new NumberFormatter('en_US', NumberFormatter::CURRENCY);
 

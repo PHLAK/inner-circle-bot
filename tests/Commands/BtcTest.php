@@ -22,17 +22,13 @@ class BtcTest extends TestCase
 
         $coinbase = $this->createMock(CoinbaseClient::class);
         $coinbase->expects($this->once())->method('currentPrice')->willReturn(
-            (object) ['data' => (object) [
-                'base' => 'BTC',
-                'currency' => 'USD',
-                'amount' => 1337.42
-            ]]
+            json_decode('{"data": {"base": "BTC", "currency": "USD", "amount": 1337.42}}')
         );
 
         (new Btc)($botman, null, $coinbase);
     }
 
-    public function test_it_can_get_the_price_on_a_specific_date(): void
+    public function test_it_can_get_the_historical_price(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
