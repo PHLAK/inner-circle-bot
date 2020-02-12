@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>MonkeyUser</title>
+        <link>https://www.monkeyuser.com</link>
+        <atom:link href="https://www.monkeyuser.com/feed.xml" rel="self" type="application/rss+xml" />
+        <item>
+            <title>Test comic; please ignore</title>
+            <description>&lt;p&gt;&lt;img src="https://www.monkeyuser.com/assets/images/1986/123-test.png" alt="Test comic; please ignore" title="Some test alt-text." /&gt;&lt;/p&gt;</description>
+            <pubDate>Tue, 20 May 1986 12:34:56 +0200</pubDate>
+            <link>https://www.monkeyuser.com/1986/test/</link>
+            <guid isPermaLink="true">https://www.monkeyuser.com/1986/test/</guid>
+        </item>
+        <item>
+            <title>Yet another comic</title>
+            <description>&lt;p&gt;&lt;img src="https://www.monkeyuser.com/assets/images/1986/122-another-test.png" alt="Yet another comic" title="Some other alt-text." /&gt;&lt;/p&gt;</description>
+            <pubDate>Tue, 19 May 1986 12:34:56 +0200</pubDate>
+            <link>https://www.monkeyuser.com/1986/another-test/</link>
+            <guid isPermaLink="true">https://www.monkeyuser.com/1986/another-test/</guid>
+        </item>
+    </channel>
+</rss>
