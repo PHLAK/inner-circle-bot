@@ -60,9 +60,7 @@ class AppManager
      */
     protected function registerProviders(): void
     {
-        Collection::make(self::PROVIDERS)->merge(
-            $this->config->get('app.providers', [])
-        )->each(function (string $provider) {
+        Collection::make(self::PROVIDERS)->each(function (string $provider) {
             $this->container->call(
                 $this->callableResolver->resolve($provider)
             );
