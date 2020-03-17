@@ -8,6 +8,7 @@ use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\Drivers\Tests\ProxyDriver;
 use DI\Container;
 use PHLAK\Config\Config;
+use PHLAK\Config\Interfaces\ConfigInterface;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use RuntimeException;
 
