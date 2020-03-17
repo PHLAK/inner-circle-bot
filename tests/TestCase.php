@@ -16,7 +16,7 @@ class TestCase extends PHPUnitTestCase
     /** @var Container The test container */
     protected $container;
 
-    /** @var Config The test config */
+    /** @var ConfigInterface The test config */
     protected $config;
 
     /** @var \BotMan\BotMan\BotMan Test BotMan component */

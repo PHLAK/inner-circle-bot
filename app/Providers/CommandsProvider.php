@@ -13,7 +13,7 @@ class CommandsProvider
     /** @var BotMan The BotMan component */
     protected $botman;
 
-    /** @var Config The application config */
+    /** @var ConfigInterface The application config */
     protected $config;
 
     /**
