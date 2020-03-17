@@ -6,7 +6,7 @@ use App\Providers;
 use DI\Bridge\Slim\Bridge;
 use DI\Container;
 use Invoker\CallableResolver;
-use PHLAK\Config\Config;
+use PHLAK\Config\Interfaces\ConfigInterface;
 use Slim\App;
 use Tightenco\Collect\Support\Collection;
 
@@ -23,7 +23,7 @@ class AppManager
     /** @var Container The applicaiton container */
     protected $container;
 
-    /** @var Config The application config */
+    /** @var ConfigInterface The application config */
     protected $config;
 
     /** @var CallableResolver The callable resolver */
@@ -32,10 +32,15 @@ class AppManager
     /**
      * Create a new Provider object.
      *
-     * @param \DI\Container $container
+     * @param \DI\Container                            $container
+     * @param \PHLAK\Config\Interfaces\ConfigInterface $config
+     * @param \Invoker\CallableResolver                $callableResolver
      */
-    public function __construct(Container $container, Config $config, CallableResolver $callableResolver)
-    {
+    public function __construct(
+        Container $container,
+        ConfigInterface $config,
+        CallableResolver $callableResolver
+    ) {
         $this->container = $container;
         $this->config = $config;
         $this->callableResolver = $callableResolver;

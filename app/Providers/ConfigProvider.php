@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use DI\Container;
 use PHLAK\Config\Config;
+use PHLAK\Config\Interfaces\ConfigInterface;
 
 class ConfigProvider
 {
@@ -27,7 +28,7 @@ class ConfigProvider
      */
     public function __invoke(): void
     {
-        $this->container->set(Config::class, Config::createFromDirectory(
+        $this->container->set(ConfigInterface::class, Config::fromDirectory(
             $this->container->get('base_path') . DIRECTORY_SEPARATOR . 'config')
         );
     }

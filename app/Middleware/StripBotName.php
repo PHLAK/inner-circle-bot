@@ -6,18 +6,19 @@ use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Interfaces\Middleware\Received;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use PHLAK\Config\Config;
+use PHLAK\Config\Interfaces\ConfigInterface;
 
 class StripBotName implements Received
 {
-    /** @var Config Application config */
+    /** @var ConfigInterface Application config */
     protected $config;
 
     /**
      * Create a new StripBotName object.
      *
-     * @param Config $config
+     * @param \PHLAK\Config\Interfaces\ConfigInterface $config
      */
-    public function __construct(Config $config)
+    public function __construct(ConfigInterface $config)
     {
         $this->config = $config;
     }
