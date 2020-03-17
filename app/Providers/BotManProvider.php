@@ -8,7 +8,6 @@ use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\Drivers\Telegram\TelegramDriver;
 use DI\Container;
-use PHLAK\Config\Config;
 use PHLAK\Config\Interfaces\ConfigInterface;
 use Psr\Log\LoggerInterface;
 

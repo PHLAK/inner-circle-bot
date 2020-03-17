@@ -5,7 +5,6 @@ namespace App\Middleware;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Interfaces\Middleware\Received;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
-use PHLAK\Config\Config;
 use PHLAK\Config\Interfaces\ConfigInterface;
 
 class StripBotName implements Received

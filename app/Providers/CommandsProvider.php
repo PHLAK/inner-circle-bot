@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\Commands;
 use BotMan\BotMan\BotMan;
-use PHLAK\Config\Config;
 use PHLAK\Config\Interfaces\ConfigInterface;
 use Tightenco\Collect\Support\Collection;
 
