@@ -11,7 +11,12 @@ update upgrade: # Upgrade application dependencies
 	@composer update
 
 test: #: Run coding standards/static analysis checks and tests
-	@php-cs-fixer fix --diff --dry-run && psalm --show-info=false && phpunit --coverage-text
+	@vendor/bin/php-cs-fixer fix --diff --dry-run \
+		&& vendor/bin/psalm --show-info=false \
+		&& vendor/bin/phpunit --coverage-text
+
+coverage: # Generate an HTML coverage report
+	@vendor/bin/phpunit --coverage-html .coverage
 
 tunnel: # Expose the application via a secure tunnel
 	@ngrok http -host-header=rewrite http://icbot.local:80
