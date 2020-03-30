@@ -3,12 +3,12 @@
 namespace Tests;
 
 use App\Commands;
+use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\Drivers\Tests\ProxyDriver;
 use DI\Container;
-use PHLAK\Config\Config;
-use PHLAK\Config\Interfaces\ConfigInterface;
+use DI\ContainerBuilder;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use RuntimeException;
 
@@ -16,9 +16,6 @@ class TestCase extends PHPUnitTestCase
 {
     /** @var Container The test container */
     protected $container;
-
-    /** @var ConfigInterface The test config */
-    protected $config;
 
     /** @var \BotMan\BotMan\BotMan Test BotMan component */
     protected $botman;
@@ -30,28 +27,21 @@ class TestCase extends PHPUnitTestCase
      */
     public function setUp(): void
     {
-        $this->container = new Container();
-        $this->container->set('base_path', $this->path('.'));
+        $this->container = (new ContainerBuilder)->addDefinitions(
+            dirname(__DIR__) . '/config/app.php'
+        )->build();
 
-        $this->config = new Config([
-            'app' => [
-                'bot_name' => 'TestBot'
-            ],
-            'botman' => [
-                'telegram' => [
-                    'token' => 'TEST_TELEGRAM_TOKEN',
-                ],
-
-                'commands' => [
-                    'ping' => Commands\Ping::class,
-                ],
-            ]
-        ]);
+        $this->container->set('base_path', $this->path());
+        $this->container->set('bot_name', 'TestBot');
+        $this->container->set('telegram_token', 'TEST_TELEGRAM_TOKEN');
+        $this->container->set('commands', ['ping' => Commands\Ping::class]);
 
         DriverManager::loadDriver(ProxyDriver::class);
         $this->botman = BotManFactory::create(
-            $this->config->split('botman')->toArray()
+            $this->container->get('botman_config')
         );
+
+        $this->container->set(BotMan::class, $this->botman);
     }
 
     /**

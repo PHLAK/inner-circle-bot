@@ -1,9 +1,7 @@
 <?php
 
 use App\Bootstrap\AppManager;
-use App\Controllers;
-use App\Support\Helpers;
-use DI\Container;
+use DI\ContainerBuilder;
 use Dotenv\Dotenv;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
@@ -12,10 +10,9 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 Dotenv::createImmutable(dirname(__DIR__))->load();
 
 // Initialize the application
-$app = (new Container)->call(AppManager::class, [dirname(__DIR__)]);
-
-// Register web routes
-$app->post('/' . Helpers::env('TELEGRAM_TOKEN'), Controllers\Telegram::class);
+$app = (new ContainerBuilder)->addDefinitions(
+    dirname(__DIR__) . '/config/app.php'
+)->build()->call(AppManager::class);
 
 // Enagage!
 $app->run();

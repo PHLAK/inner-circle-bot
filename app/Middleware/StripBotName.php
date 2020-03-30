@@ -5,21 +5,19 @@ namespace App\Middleware;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Interfaces\Middleware\Received;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
-use PHLAK\Config\Interfaces\ConfigInterface;
+use DI\Container;
 
 class StripBotName implements Received
 {
-    /** @var ConfigInterface Application config */
-    protected $config;
+    /** @var Container The application container */
+    protected $container;
 
     /**
      * Create a new StripBotName object.
-     *
-     * @param \PHLAK\Config\Interfaces\ConfigInterface $config
      */
-    public function __construct(ConfigInterface $config)
+    public function __construct(Container $container)
     {
-        $this->config = $config;
+        $this->container = $container;
     }
 
     /**
@@ -33,7 +31,7 @@ class StripBotName implements Received
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {
-        $botName = (string) $this->config->get('app.bot_name');
+        $botName = (string) $this->container->get('bot_name');
 
         if (preg_match("/^[^@\s]+@{$botName}.*$/", $message->getText())) {
             $canonicalized = preg_replace("/@{$botName}/", '', $message->getText());
