@@ -4,6 +4,9 @@ use App\Commands;
 use App\Factories;
 
 return [
+    /** Application debugging */
+    'debugging' => DI\env('APP_DEBUG', false),
+
     /** Path to base application folder */
     'base_path' => dirname(__DIR__),
 
