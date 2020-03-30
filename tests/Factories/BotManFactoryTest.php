@@ -1,20 +1,18 @@
 <?php
 
-namespace Tests\Providers;
+namespace Tests\Factories;
 
-use App\Providers\BotManProvider;
+use App\Factories\BotManFactory;
 use BotMan\BotMan\BotMan;
 use Psr\Log\LoggerInterface;
 use Tests\TestCase;
 
-class BotManProviderTest extends TestCase
+class BotManFactoryTest extends TestCase
 {
     public function test_it_can_register_the_botman_component(): void
     {
         $logger = $this->createMock(LoggerInterface::class);
-        (new BotManProvider($this->container, $this->config, $logger))();
-
-        $botman = $this->container->get(BotMan::class);
+        $botman = (new BotManFactory($this->container, $logger))();
 
         $this->assertInstanceOf(BotMan::class, $botman);
     }
