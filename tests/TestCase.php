@@ -32,8 +32,6 @@ class TestCase extends PHPUnitTestCase
         )->build();
 
         $this->container->set('base_path', $this->path());
-        $this->container->set('bot_name', 'TestBot');
-        $this->container->set('telegram_token', 'TEST_TELEGRAM_TOKEN');
         $this->container->set('commands', ['ping' => Commands\Ping::class]);
 
         DriverManager::loadDriver(ProxyDriver::class);
