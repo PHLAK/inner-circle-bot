@@ -24,6 +24,7 @@
         "vlucas/phpdotenv": "^4.1"
     },
     "require-dev": {
+        "php": ">=7.4",
         "friendsofphp/php-cs-fixer": "^2.16",
         "phpunit/phpunit": "^9.0",
         "psy/psysh": "^0.10",
