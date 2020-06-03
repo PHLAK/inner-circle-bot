@@ -22,7 +22,11 @@ class BusyTest extends TestCase
     /** @const Array of adjecetives */
     protected const ADJECTIVES = [
         'active', 'associative', 'bi-directional', 'corrupt', 'complex',
-        'cyberprotectedero', 'tertiary', 'unlinked', 'unusual', 'well-documented',
+        'cybernetic', 'dank', 'deterministic', 'duplicate', 'dynamic',
+        'ethereal', 'euclidean', 'finite', 'high-level', 'infinite', 'inverse',
+        'linked', 'low-level', 'multi-dimensional', 'negative', 'non-euclidean',
+        'positive', 'prallel', 'quantifiable', 'random', 'sentient', 'static',
+        'sub-zero', 'tertiary', 'unlinked', 'unusual', 'well-documented',
         'vectorized', '' // Intentionally blank
     ];
 
