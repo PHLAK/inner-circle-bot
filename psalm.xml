@@ -9,6 +9,8 @@
 >
     <projectFiles>
         <directory name="app" />
+        <directory name="config" />
+        <directory name="public" />
         <ignoreFiles>
             <directory name="vendor" />
         </ignoreFiles>
