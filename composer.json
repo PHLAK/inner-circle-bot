@@ -21,7 +21,7 @@
         "slim/psr7": "^1.0",
         "slim/slim": "^4.3",
         "tightenco/collect": "^5.0 || ^6.0 || ^7.0",
-        "vlucas/phpdotenv": "^4.1"
+        "vlucas/phpdotenv": "^5.0"
     },
     "require-dev": {
         "php": ">=7.4",
