@@ -7,7 +7,7 @@ use Dotenv\Dotenv;
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 // Initialize environment variable handler
-Dotenv::createImmutable(dirname(__DIR__))->load();
+Dotenv::createUnsafeImmutable(dirname(__DIR__))->load();
 
 // Initialize the container
 $container = (new ContainerBuilder)->addDefinitions(
