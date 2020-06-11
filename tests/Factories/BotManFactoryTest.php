@@ -7,6 +7,7 @@ use BotMan\BotMan\BotMan;
 use Psr\Log\LoggerInterface;
 use Tests\TestCase;
 
+/** @covers \App\Factories\BotManFactory */
 class BotManFactoryTest extends TestCase
 {
     public function test_it_can_register_the_botman_component(): void

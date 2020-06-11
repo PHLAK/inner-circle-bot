@@ -6,6 +6,7 @@ use App\Commands\Fallback;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Fallback */
 class FallbackTest extends TestCase
 {
     public function test_it_responds_with_a_random_reply(): void

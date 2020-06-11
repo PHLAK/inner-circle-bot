@@ -6,6 +6,7 @@ use App\Commands\Busy;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Busy */
 class BusyTest extends TestCase
 {
     /** @const Array of verbs */

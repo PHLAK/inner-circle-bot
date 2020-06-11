@@ -6,6 +6,7 @@ use App\Commands\Eightball;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Eightball */
 class EightballTest extends TestCase
 {
     public function test_it_respond_with_a_random_prediction(): void

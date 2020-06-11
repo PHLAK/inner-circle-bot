@@ -56,14 +56,11 @@ class Btc
             return;
         }
 
-        $botman->reply(
-            sprintf(
-                '<strong>Price on %s:</strong> %s',
-                Carbon::parse($date)->format('F jS, Y'),
-                $this->formatCurrency($btc->data->amount)
-            ),
-            ['parse_mode' => 'HTML']
-        );
+        $botman->reply(sprintf(
+            '<strong>Price on %s:</strong> %s',
+            Carbon::parse($date)->format('F jS, Y'),
+            $this->formatCurrency($btc->data->amount)
+        ), ['parse_mode' => 'HTML']);
     }
 
     /**

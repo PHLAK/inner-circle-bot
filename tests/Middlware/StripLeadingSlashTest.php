@@ -6,6 +6,7 @@ use App\Middleware\StripLeadingSlash;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use Tests\TestCase;
 
+/** @covers \App\Middleware\StripLeadingSlash */
 class StripLeadingSlashTest extends TestCase
 {
     public function test_it_strips_a_leading_slash_from_a_command(): void

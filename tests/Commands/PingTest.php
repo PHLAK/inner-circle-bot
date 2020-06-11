@@ -6,6 +6,7 @@ use App\Commands\Ping;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Ping */
 class PingTest extends TestCase
 {
     public function test_it_responds_to_a_ping(): void

@@ -8,6 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 use Slim\Psr7\Response;
 use Tests\TestCase;
 
+/** @covers \App\Controllers\Telegram */
 class TelegramTest extends TestCase
 {
     public function test_it_returns_a_successful_response(): void

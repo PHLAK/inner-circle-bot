@@ -9,6 +9,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Tests\TestCase;
 
+/** @covers \App\Http\Clients\DilbertClient */
 class DilbertClientTest extends TestCase
 {
     public function test_it_can_fetch_the_latest_comic(): void

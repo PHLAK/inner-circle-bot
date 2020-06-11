@@ -6,6 +6,7 @@ use App\Middleware\StripBotName;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use Tests\TestCase;
 
+/** @covers \App\Middleware\StripBotName */
 class StripBotNameTest extends TestCase
 {
     public function test_it_strips_a_bot_suffix_from_a_command(): void

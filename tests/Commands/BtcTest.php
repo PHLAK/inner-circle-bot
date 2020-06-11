@@ -10,6 +10,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Btc */
 class BtcTest extends TestCase
 {
     /** @const Array of sticker IDs */

@@ -6,6 +6,7 @@ use App\Commands\Roll;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Roll */
 class RollTest extends TestCase
 {
     public function test_it_can_roll_a_single_die(): void

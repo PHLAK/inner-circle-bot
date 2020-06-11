@@ -12,6 +12,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Dilbert */
 class DilbertTest extends TestCase
 {
     public function test_it_can_fetch_the_latest_comic(): void

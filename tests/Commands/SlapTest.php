@@ -6,6 +6,7 @@ use App\Commands\Slap;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Slap */
 class SlapTest extends TestCase
 {
     public function test_it_can_slap_someone_with_a_random_object(): void

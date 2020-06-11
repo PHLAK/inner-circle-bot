@@ -6,6 +6,7 @@ use App\Middleware\LogResponse;
 use Monolog\Logger;
 use Tests\TestCase;
 
+/** @covers \App\Middleware\LogResponse */
 class LogResponseTest extends TestCase
 {
     public function test_it_logs_the_incoming_message(): void

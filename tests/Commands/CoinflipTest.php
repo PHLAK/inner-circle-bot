@@ -6,6 +6,7 @@ use App\Commands\Coinflip;
 use BotMan\BotMan\BotMan;
 use Tests\TestCase;
 
+/** @covers \App\Commands\Coinflip */
 class CoinflipTest extends TestCase
 {
     public function test_it_can_flip_a_coin(): void

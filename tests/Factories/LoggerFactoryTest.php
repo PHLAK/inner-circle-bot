@@ -6,6 +6,7 @@ use App\Factories\LoggerFactory;
 use Psr\Log\LoggerInterface;
 use Tests\TestCase;
 
+/** @covers \App\Factories\LoggerFactory */
 class LoggerFactoryTest extends TestCase
 {
     public function test_it_can_register_the_logging_component(): void

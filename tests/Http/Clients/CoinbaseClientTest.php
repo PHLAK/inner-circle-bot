@@ -9,6 +9,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Tests\TestCase;
 
+/** @covers \App\Http\Clients\CoinbaseClient */
 class CoinbaseClientTest extends TestCase
 {
     public function test_it_can_fetch_the_current_price(): void
