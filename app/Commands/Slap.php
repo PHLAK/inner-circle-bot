@@ -17,6 +17,7 @@ class Slap
 
     protected Collection $objects;
 
+    /** Create a new Slap object. */
     public function __construct()
     {
         $this->objects = new Collection(self::OBJECTS);
