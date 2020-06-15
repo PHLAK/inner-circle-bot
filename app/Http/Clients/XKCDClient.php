@@ -7,8 +7,7 @@ use stdClass;
 
 class XKCDClient
 {
-    /** @var Client The Guzzle HTTP client */
-    protected $client;
+    protected Client $client;
 
     /** Create a new XKCDClient object. */
     public function __construct(array $config = [])

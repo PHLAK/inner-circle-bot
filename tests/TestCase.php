@@ -14,11 +14,8 @@ use RuntimeException;
 
 class TestCase extends PHPUnitTestCase
 {
-    /** @var Container The test container */
-    protected $container;
-
-    /** @var \BotMan\BotMan\BotMan Test BotMan component */
-    protected $botman;
+    protected Container $container;
+    protected BotMan $botman;
 
     /** This method is called before each test. */
     public function setUp(): void

@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "ext-intl": "*",
         "botman/botman": "^2.5",
         "botman/driver-telegram": "^1.5",
@@ -24,7 +24,6 @@
         "vlucas/phpdotenv": "^5.0"
     },
     "require-dev": {
-        "php": ">=7.4",
         "friendsofphp/php-cs-fixer": "^2.16",
         "phpunit/phpunit": "^9.0",
         "psy/psysh": "^0.10",

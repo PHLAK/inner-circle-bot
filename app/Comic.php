@@ -4,17 +4,10 @@ namespace App;
 
 class Comic
 {
-    /** @var string The comic's title */
-    protected $title;
-
-    /** @var string The comic's alt/hover text */
-    protected $altText;
-
-    /** @var string The comic's image URL */
-    protected $imageUrl;
-
-    /** @var string The comic's source URL */
-    protected $sourceUrl;
+    protected string $title;
+    protected string $altText;
+    protected string $imageUrl;
+    protected string $sourceUrl;
 
     /** Create a new Comic object. */
     public function __construct(

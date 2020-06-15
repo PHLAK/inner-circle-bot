@@ -8,11 +8,8 @@ use Slim\App;
 
 class RouteManager
 {
-    /** @var App The application */
-    protected $app;
-
-    /** @var Container The application container */
-    protected $container;
+    protected App $app;
+    protected Container $container;
 
     public function __construct(App $app, Container $container)
     {

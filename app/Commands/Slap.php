@@ -15,8 +15,7 @@ class Slap
         'a soggy noodle',
     ];
 
-    /** @var Collection */
-    protected $objects;
+    protected Collection $objects;
 
     public function __construct()
     {

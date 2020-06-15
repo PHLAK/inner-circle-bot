@@ -8,8 +8,7 @@ use Psr\Log\LoggerInterface;
 
 class LogResponse implements Sending
 {
-    /** @var LoggerInterface */
-    protected $log;
+    protected LoggerInterface $log;
 
     /** Create a new MessageLogger object. */
     public function __construct(LoggerInterface $logger)

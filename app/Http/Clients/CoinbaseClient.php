@@ -8,8 +8,7 @@ use stdClass;
 
 class CoinbaseClient
 {
-    /** @var Client The Guzzle HTTP client */
-    protected $client;
+    protected Client $client;
 
     /** Create a new CoinbaseClient object. */
     public function __construct(array $config = [])

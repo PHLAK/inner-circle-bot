@@ -9,8 +9,7 @@ use Psr\Log\LoggerInterface;
 
 class LoggerFactory
 {
-    /** @var Container The applicaiton container */
-    protected $container;
+    protected Container $container;
 
     /** Create a new LoggingFactory object. */
     public function __construct(Container $container)

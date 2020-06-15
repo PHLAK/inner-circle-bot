@@ -13,11 +13,8 @@ use Tightenco\Collect\Support\Collection;
 
 class BotManFactory
 {
-    /** @var Container The application container */
-    protected $container;
-
-    /** @var LoggerInterface The application logger */
-    protected $logger;
+    protected Container $container;
+    protected LoggerInterface $logger;
 
     /** Create a new BotmanFactory object. */
     public function __construct(Container $container, LoggerInterface $logger)

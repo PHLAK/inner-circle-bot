@@ -9,8 +9,7 @@ use DI\Container;
 
 class StripBotName implements Received
 {
-    /** @var Container The application container */
-    protected $container;
+    protected Container $container;
 
     /** Create a new StripBotName object. */
     public function __construct(Container $container)

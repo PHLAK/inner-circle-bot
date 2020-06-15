@@ -7,8 +7,7 @@ use GuzzleHttp\Client;
 
 class ExplosmClient
 {
-    /** @var Client The Guzzle HTTP client */
-    protected $client;
+    protected Client $client;
 
     /** Create a new ExplosmClient object. */
     public function __construct(array $config = [])

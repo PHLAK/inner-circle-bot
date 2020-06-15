@@ -8,8 +8,7 @@ use SimpleXMLElement;
 
 class MonkeyUserClient
 {
-    /** @var Client The Guzzle HTTP client */
-    protected $client;
+    protected Client $client;
 
     /** Create a new MonkeyUserClient object. */
     public function __construct(array $config = [])

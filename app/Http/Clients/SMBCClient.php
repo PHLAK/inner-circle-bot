@@ -8,8 +8,7 @@ use SimpleXMLElement;
 
 class SMBCClient
 {
-    /** @var Client The Guzzle HTTP client */
-    protected $client;
+    protected Client $client;
 
     /** Create a new SMBCClient object. */
     public function __construct(array $config = [])

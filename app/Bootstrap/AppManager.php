@@ -8,8 +8,7 @@ use Slim\App;
 
 class AppManager
 {
-    /** @var Container The applicaiton container */
-    protected $container;
+    protected Container $container;
 
     /** Create a new Provider object. */
     public function __construct(Container $container)

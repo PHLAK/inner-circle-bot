@@ -12,8 +12,7 @@ class DilbertClient
     /** @const The date of the earliest comic */
     protected const START_DATE = '1989-04-16';
 
-    /** @var Client The Guzzle HTTP client */
-    protected $client;
+    protected Client $client;
 
     /** Create a new DilbertClient object. */
     public function __construct(array $config = [])
