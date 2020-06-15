@@ -15,9 +15,7 @@ class StripLeadingSlashTest extends TestCase
 
         $message = $middleware->received(
             new IncomingMessage('/test argument', 'Arthur Dent', 'Ford Prefect'),
-            function (IncomingMessage $message) {
-                return $message;
-            },
+            fn (IncomingMessage $message) => $message,
             $this->botman
         );
 
@@ -30,9 +28,7 @@ class StripLeadingSlashTest extends TestCase
 
         $message = $middleware->received(
             new IncomingMessage('test argument', 'Arthur Dent', 'Ford Prefect'),
-            function (IncomingMessage $message) {
-                return $message;
-            },
+            fn (IncomingMessage $message) => $message,
             $this->botman
         );
 
