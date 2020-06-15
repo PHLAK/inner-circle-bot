@@ -24,7 +24,7 @@ class XKCDClient
     {
         $response = $this->client->get('info.0.json');
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR);
     }
 
     /** Fetch a comic by ID. */
@@ -32,6 +32,6 @@ class XKCDClient
     {
         $response = $this->client->get("{$id}/info.0.json");
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR);
     }
 }

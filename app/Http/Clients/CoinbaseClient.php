@@ -25,7 +25,7 @@ class CoinbaseClient
     {
         $response = $this->client->get('prices/BTC-USD/spot');
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR);
     }
 
     /** Fetch the price from a specific date// ... */
@@ -35,6 +35,6 @@ class CoinbaseClient
             sprintf('prices/BTC-USD/spot?date=%s', $date->format('Y-m-d'))
         );
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR);
     }
 }
