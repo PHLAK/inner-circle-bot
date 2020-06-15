@@ -11,11 +11,7 @@ class SMBCClient
     /** @var Client The Guzzle HTTP client */
     protected $client;
 
-    /**
-     * Create a new SMBCClient object.
-     *
-     * @param array $config
-     */
+    /** Create a new SMBCClient object. */
     public function __construct(array $config = [])
     {
         $this->client = new Client((array) array_replace_recursive([
@@ -25,11 +21,7 @@ class SMBCClient
         ], $config));
     }
 
-    /**
-     * Fetch the latest comic.
-     *
-     * @return \App\Comic
-     */
+    /** Fetch the latest comic. */
     public function latest(): Comic
     {
         $xml = new SimpleXMLElement(
@@ -46,13 +38,7 @@ class SMBCClient
         );
     }
 
-    /**
-     * Extract the title from a comic XML object.
-     *
-     * @param \SimpleXMLElement $comic
-     *
-     * @return string
-     */
+    /** Extract the title from a comic XML object. */
     protected function extractTitle(SimpleXMLElement $comic): string
     {
         preg_match('/^Saturday Morning Breakfast Cereal - (?<title>.*)$/', $comic->title, $matches);
@@ -60,13 +46,7 @@ class SMBCClient
         return $matches['title'];
     }
 
-    /**
-     * Extract the alt text from a comic XML object.
-     *
-     * @param \SimpleXMLElement $comic
-     *
-     * @return string
-     */
+    /** Extract the alt text from a comic XML object. */
     protected function extractAltText(SimpleXMLElement $comic): string
     {
         preg_match('/<p>Hovertext:(?:<br\/>)(?<alt_text>.*)<\/p>/', $comic->description, $matches);
@@ -74,13 +54,7 @@ class SMBCClient
         return $matches['alt_text'];
     }
 
-    /**
-     * Extract the image URL from a comic XML object.
-     *
-     * @param \SimpleXMLElement $comic
-     *
-     * @return string
-     */
+    /** Extract the image URL from a comic XML object. */
     protected function extractImageUrl(SimpleXMLElement $comic): string
     {
         preg_match('/<img src="(?<image_url>.*)" \/>/', $comic->description, $matches);

@@ -10,15 +10,8 @@ use GuzzleHttp\Exception\ClientException;
 
 class SMBC
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan        $botman
-     * @param \App\Http\Clients\SMBCClient $smbc
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, ?SMBCClient $smbc = null)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, ?SMBCClient $smbc = null): void
     {
         try {
             $comic = ($smbc ?? new SMBCClient)->latest();

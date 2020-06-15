@@ -20,13 +20,7 @@ class Fallback
         '🤔',
     ];
 
-    /**
-     * Run the command.
-     *
-     * @param \BotMan\BotMan\BotMan $botman
-     *
-     * @return void
-     */
+    /** Run the command. */
     public function __invoke(BotMan $botman): void
     {
         $botman->randomReply(self::REPLIES);

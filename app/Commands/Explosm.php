@@ -10,16 +10,8 @@ use GuzzleHttp\Exception\ClientException;
 
 class Explosm
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan                $botman
-     * @param int|null                             $id
-     * @param \App\Http\Clients\ExplosmClient|null $explosm
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, ?int $id = null, ?ExplosmClient $explosm = null)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, ?int $id = null, ?ExplosmClient $explosm = null): void
     {
         $explosm = $explosm ?? new ExplosmClient();
 

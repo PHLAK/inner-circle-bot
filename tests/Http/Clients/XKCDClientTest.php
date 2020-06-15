@@ -31,14 +31,8 @@ class XKCDClientTest extends TestCase
         $this->assertEquals('https://imgs.xkcd.com/comics/example.png', $comic->img);
     }
 
-    /**
-     * Create a mocked XKCDClient object.
-     *
-     * @param array $responses
-     *
-     * @return \App\Http\Clients\XKCDClient
-     */
-    protected function mockXKCDCLient(array $responses = null): XKCDClient
+    /** Create a mocked XKCDClient object. */
+    protected function mockXKCDCLient(?array $responses = null): XKCDClient
     {
         return new XKCDClient([
             'handler' => HandlerStack::create(

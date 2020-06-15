@@ -11,11 +11,7 @@ class CoinbaseClient
     /** @var Client The Guzzle HTTP client */
     protected $client;
 
-    /**
-     * Create a new CoinbaseClient object.
-     *
-     * @param array $config
-     */
+    /** Create a new CoinbaseClient object. */
     public function __construct(array $config = [])
     {
         $this->client = new Client((array) array_replace_recursive([
@@ -25,11 +21,7 @@ class CoinbaseClient
         ], $config));
     }
 
-    /**
-     * Fetch the current price.
-     *
-     * @return \stdClass
-     */
+    /** Fetch the current price. */
     public function currentPrice(): stdClass
     {
         $response = $this->client->get('prices/BTC-USD/spot');
@@ -37,13 +29,7 @@ class CoinbaseClient
         return json_decode($response->getBody()->getContents());
     }
 
-    /**
-     * Fetch the price from a specific date// ...
-     *
-     * @param Carbon $date
-     *
-     * @return \stdClass
-     */
+    /** Fetch the price from a specific date// ... */
     public function priceOn(Carbon $date): stdClass
     {
         $response = $this->client->get(

@@ -10,15 +10,8 @@ use GuzzleHttp\Exception\ClientException;
 
 class MonkeyUser
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan              $botman
-     * @param \App\Http\Clients\MonkeyUserClient $monkeyuser
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, ?MonkeyUserClient $monkeyuser = null)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, ?MonkeyUserClient $monkeyuser = null): void
     {
         try {
             $comic = ($monkeyuser ?? new MonkeyUserClient)->latest();

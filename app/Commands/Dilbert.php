@@ -11,16 +11,8 @@ use GuzzleHttp\Exception\ClientException;
 
 class Dilbert
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan           $botman
-     * @param string                          $date
-     * @param \App\Http\Clients\DilbertClient $dilbert
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, string $date = null, ?DilbertClient $dilbert = null)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, ?string $date = null, ?DilbertClient $dilbert = null): void
     {
         $dilbert = $dilbert ?? new DilbertClient();
 

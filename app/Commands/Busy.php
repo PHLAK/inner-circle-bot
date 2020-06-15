@@ -38,14 +38,8 @@ class Busy
         'splines', 'states', 'structures', 'tables', 'threads'
     ];
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param BotMan $botman
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman): void
     {
         $botman->reply(
             sprintf('%s %s %s',

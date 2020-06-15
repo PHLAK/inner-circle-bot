@@ -21,14 +21,8 @@ class SMBCClientTest extends TestCase
         $this->assertEquals('https://www.smbc-comics.com/comic/test', $comic->sourceUrl);
     }
 
-    /**
-     * Create a mocked SMBCClient object.
-     *
-     * @param array $responses
-     *
-     * @return \App\Http\Clients\SMBCClient
-     */
-    protected function mockSMBCClient(array $responses = null): SMBCClient
+    /** Create a mocked SMBCClient object. */
+    protected function mockSMBCClient(?array $responses = null): SMBCClient
     {
         return new SMBCClient([
             'handler' => HandlerStack::create(

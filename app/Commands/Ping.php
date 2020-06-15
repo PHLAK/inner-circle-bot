@@ -6,14 +6,8 @@ use BotMan\BotMan\BotMan;
 
 class Ping
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan $botman
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman): void
     {
         $botman->reply('pong');
     }

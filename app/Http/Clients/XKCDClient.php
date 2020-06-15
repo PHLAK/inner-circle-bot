@@ -10,11 +10,7 @@ class XKCDClient
     /** @var Client The Guzzle HTTP client */
     protected $client;
 
-    /**
-     * Create a new XKCDClient object.
-     *
-     * @param array $config
-     */
+    /** Create a new XKCDClient object. */
     public function __construct(array $config = [])
     {
         $this->client = new Client((array) array_replace_recursive([
@@ -24,11 +20,7 @@ class XKCDClient
         ], $config));
     }
 
-    /**
-     * Fetch the latest comic.
-     *
-     * @return \stdClass
-     */
+    /** Fetch the latest comic. */
     public function latest(): stdClass
     {
         $response = $this->client->get('info.0.json');
@@ -36,13 +28,7 @@ class XKCDClient
         return json_decode($response->getBody()->getContents());
     }
 
-    /**
-     * Fetch a comic by ID.
-     *
-     * @param int $id
-     *
-     * @return \stdClass
-     */
+    /** Fetch a comic by ID. */
     public function byId(int $id): stdClass
     {
         $response = $this->client->get("{$id}/info.0.json");

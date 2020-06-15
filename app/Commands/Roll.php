@@ -7,16 +7,8 @@ use Tightenco\Collect\Support\Collection;
 
 class Roll
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan $botman
-     * @param int                   $dice
-     * @param int                   $sides
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, int $dice, int $sides)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, int $dice, int $sides): void
     {
         if ($dice > 300) {
             $botman->reply('I am not able to hold that many dice at once');

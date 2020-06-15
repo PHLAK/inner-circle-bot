@@ -10,16 +10,8 @@ use GuzzleHttp\Exception\ClientException;
 
 class XKCD
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan             $botman
-     * @param int|null                          $id
-     * @param \App\Http\Clients\XKCDClient|null $xkcd
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, ?int $id = null, ?XKCDClient $xkcd = null)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, ?int $id = null, ?XKCDClient $xkcd = null): void
     {
         $xkcd = $xkcd ?? new XKCDClient();
 

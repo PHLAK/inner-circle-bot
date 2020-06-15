@@ -16,14 +16,7 @@ class Comic
     /** @var string The comic's source URL */
     protected $sourceUrl;
 
-    /**
-     * Create a new Comic object.
-     *
-     * @param string $title
-     * @param string $altText
-     * @param string $imageUrl
-     * @param string $sourceUrl
-     */
+    /** Create a new Comic object. */
     public function __construct(
         string $title,
         string $altText,
@@ -36,13 +29,7 @@ class Comic
         $this->sourceUrl = $sourceUrl;
     }
 
-    /**
-     * Get a protected property.
-     *
-     * @param string $name
-     *
-     * @return mixed
-     */
+    /** Get a protected property. */
     public function __get(string $name)
     {
         return $this->{$name};

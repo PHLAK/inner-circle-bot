@@ -11,11 +11,7 @@ class LogResponse implements Sending
     /** @var LoggerInterface */
     protected $log;
 
-    /**
-     * Create a new MessageLogger object.
-     *
-     * @param \Psr\Log\LoggerInterface $logger
-     */
+    /** Create a new MessageLogger object. */
     public function __construct(LoggerInterface $logger)
     {
         $this->log = $logger;
@@ -27,9 +23,6 @@ class LogResponse implements Sending
      *
      * @param mixed    $payload
      * @param callable $next
-     * @param BotMan   $bot
-     *
-     * @return mixed
      */
     public function sending($payload, $next, BotMan $bot)
     {

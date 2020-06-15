@@ -19,23 +19,14 @@ class BotManFactory
     /** @var LoggerInterface The application logger */
     protected $logger;
 
-    /**
-     * Create a new BotmanFactory object.
-     *
-     * @param \DI\Container            $container
-     * @param \Psr\Log\LoggerInterface $logger
-     */
+    /** Create a new BotmanFactory object. */
     public function __construct(Container $container, LoggerInterface $logger)
     {
         $this->container = $container;
         $this->logger = $logger;
     }
 
-    /**
-     * Configure and return a new BotMan instance.
-     *
-     * @return \BotMan\BotMan\BotMan
-     */
+    /** Configure and return a new BotMan instance. */
     public function __invoke(): BotMan\BotMan
     {
         DriverManager::loadDriver(TelegramDriver::class);

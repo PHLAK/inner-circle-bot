@@ -31,14 +31,8 @@ class ExplosmClientTest extends TestCase
         $this->assertEquals('http://explosm.net/comics/1337/', $comic->sourceUrl);
     }
 
-    /**
-     * Create a mocked ExplosmClient object.
-     *
-     * @param array $responses
-     *
-     * @return \App\Http\Clients\ExplosmClient
-     */
-    protected function mockExplosmClient(array $responses = null): ExplosmClient
+    /** Create a mocked ExplosmClient object. */
+    protected function mockExplosmClient(?array $responses = null): ExplosmClient
     {
         return new ExplosmClient([
             'handler' => HandlerStack::create(

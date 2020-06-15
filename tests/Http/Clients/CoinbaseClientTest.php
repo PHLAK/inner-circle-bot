@@ -30,14 +30,8 @@ class CoinbaseClientTest extends TestCase
         $this->assertEquals($btc->data->amount, 1337.42);
     }
 
-    /**
-     * Create a mocked CoinbaseClient object.
-     *
-     * @param array $responses
-     *
-     * @return \App\Http\Clients\CoinbaseClient
-     */
-    protected function mockCoinbaseClient(array $responses = null): CoinbaseClient
+    /** Create a mocked CoinbaseClient object. */
+    protected function mockCoinbaseClient(?array $responses = null): CoinbaseClient
     {
         return new CoinbaseClient([
             'handler' => HandlerStack::create(

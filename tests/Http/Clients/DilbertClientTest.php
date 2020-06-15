@@ -44,14 +44,8 @@ class DilbertClientTest extends TestCase
         $this->assertEquals('http://dilbert.com/strip/1986-05-20', $comic->sourceUrl);
     }
 
-    /**
-     * Create a mocked DilbertClient object.
-     *
-     * @param array $responses
-     *
-     * @return \App\Http\Clients\DilbertClient
-     */
-    protected function mockDilbertClient(array $responses = null): DilbertClient
+    /** Create a mocked DilbertClient object. */
+    protected function mockDilbertClient(?array $responses = null): DilbertClient
     {
         return new DilbertClient([
             'handler' => HandlerStack::create(

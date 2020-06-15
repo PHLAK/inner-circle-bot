@@ -11,11 +11,7 @@ class StripLeadingSlash implements Received
     /**
      * Handle an incoming message.
      *
-     * @param IncomingMessage $message
-     * @param callable        $next
-     * @param BotMan          $bot
-     *
-     * @return mixed
+     * @param callable $next
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {

@@ -12,9 +12,7 @@ class StripBotName implements Received
     /** @var Container The application container */
     protected $container;
 
-    /**
-     * Create a new StripBotName object.
-     */
+    /** Create a new StripBotName object. */
     public function __construct(Container $container)
     {
         $this->container = $container;
@@ -23,11 +21,7 @@ class StripBotName implements Received
     /**
      * Handle an incoming message.
      *
-     * @param IncomingMessage $message
-     * @param callable        $next
-     * @param BotMan          $bot
-     *
-     * @return mixed
+     * @param callable $next
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {

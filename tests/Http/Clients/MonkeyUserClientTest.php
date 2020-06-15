@@ -21,14 +21,8 @@ class MonkeyUserClientTest extends TestCase
         $this->assertEquals('https://www.monkeyuser.com/1986/test/', $comic->sourceUrl);
     }
 
-    /**
-     * Create a mocked MonkeyUserClient object.
-     *
-     * @param array $responses
-     *
-     * @return \App\Http\Clients\MonkeyUserClient
-     */
-    protected function mockMonkeyUserClient(array $responses = null): MonkeyUserClient
+    /** Create a mocked MonkeyUserClient object. */
+    protected function mockMonkeyUserClient(?array $responses = null): MonkeyUserClient
     {
         return new MonkeyUserClient([
             'handler' => HandlerStack::create(

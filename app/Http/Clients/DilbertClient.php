@@ -15,11 +15,7 @@ class DilbertClient
     /** @var Client The Guzzle HTTP client */
     protected $client;
 
-    /**
-     * Create a new DilbertClient object.
-     *
-     * @param array $config
-     */
+    /** Create a new DilbertClient object. */
     public function __construct(array $config = [])
     {
         $this->client = new Client((array) array_replace_recursive([
@@ -29,11 +25,7 @@ class DilbertClient
         ], $config));
     }
 
-    /**
-     * Fetch the latest comic.
-     *
-     * @return \App\Comic
-     */
+    /** Fetch the latest comic. */
     public function latest(): Comic
     {
         $html = (string) $this->client->get(
@@ -48,13 +40,7 @@ class DilbertClient
         );
     }
 
-    /**
-     * Fetch a comic by date.
-     *
-     * @param \Carbon\Carbon $date
-     *
-     * @return \App\Comic
-     */
+    /** Fetch a comic by date. */
     public function byDate(Carbon $date): Comic
     {
         $html = (string) $this->client->get(
@@ -69,11 +55,7 @@ class DilbertClient
         );
     }
 
-    /**
-     * Fetch a random comic.
-     *
-     * @return \App\Comic
-     */
+    /** Fetch a random comic. */
     public function random(): Comic
     {
         $html = (string) $this->client->get(
@@ -88,11 +70,7 @@ class DilbertClient
         );
     }
 
-    /**
-     * Get a random date since the start date.
-     *
-     * @return \Carbon\Carbon
-     */
+    /** Get a random date since the start date. */
     protected function randomDate(): Carbon
     {
         return Collection::make(
@@ -100,13 +78,7 @@ class DilbertClient
         )->random();
     }
 
-    /**
-     * Extract the comcic's title from the HTML.
-     *
-     * @param string $html
-     *
-     * @return string
-     */
+    /** Extract the comcic's title from the HTML. */
     protected function extractTitle(string $html): string
     {
         preg_match('/<meta\s*property="og:title"\s*content="(?<title>.*)"\s*\/>/', $html, $matches);
@@ -114,13 +86,7 @@ class DilbertClient
         return $matches['title'];
     }
 
-    /**
-     * Extract the comcic's description from the HTML.
-     *
-     * @param string $html
-     *
-     * @return string
-     */
+    /** Extract the comcic's description from the HTML. */
     protected function extractDescription(string $html): string
     {
         preg_match('/<meta\s*property="og:description"\s*content="(?<description>.*)"\s*\/>/sU', $html, $matches);
@@ -128,13 +94,7 @@ class DilbertClient
         return $matches['description'] ?? '';
     }
 
-    /**
-     * Extract the comic's image URL from the HTML.
-     *
-     * @param string $html
-     *
-     * @return string
-     */
+    /** Extract the comic's image URL from the HTML. */
     protected function extractImageUrl(string $html): string
     {
         preg_match('/<meta\s*property="og:image"\s*content="(?<image_url>.*)"\s*\/>/', $html, $matches);
@@ -142,13 +102,7 @@ class DilbertClient
         return $matches['image_url'];
     }
 
-    /**
-     * Extract the comic's source URL from the HTML.
-     *
-     * @param string $html
-     *
-     * @return string
-     */
+    /** Extract the comic's source URL from the HTML. */
     protected function extractSourceUrl(string $html): string
     {
         preg_match('/<meta\s*property="og:url"\s*content="(?<source_url>.*)"\s*\/>/', $html, $matches);

@@ -11,11 +11,7 @@ class MonkeyUserClient
     /** @var Client The Guzzle HTTP client */
     protected $client;
 
-    /**
-     * Create a new MonkeyUserClient object.
-     *
-     * @param array $config
-     */
+    /** Create a new MonkeyUserClient object. */
     public function __construct(array $config = [])
     {
         $this->client = new Client((array) array_replace_recursive([
@@ -25,11 +21,7 @@ class MonkeyUserClient
         ], $config));
     }
 
-    /**
-     * Fetch the latest comic.
-     *
-     * @return \App\Comic
-     */
+    /** Fetch the latest comic. */
     public function latest(): Comic
     {
         $xml = new SimpleXMLElement(
@@ -46,13 +38,7 @@ class MonkeyUserClient
         );
     }
 
-    /**
-     * Extract the alt text from a comic XML object.
-     *
-     * @param \SimpleXMLElement $comic
-     *
-     * @return string
-     */
+    /** Extract the alt text from a comic XML object. */
     protected function extractAltText(SimpleXMLElement $comic): string
     {
         preg_match('/title="(?<alt_text>.+)"/U', $comic->description, $matches);
@@ -60,13 +46,7 @@ class MonkeyUserClient
         return $matches['alt_text'];
     }
 
-    /**
-     * Extract the image URL from a comic XML object.
-     *
-     * @param \SimpleXMLElement $comic
-     *
-     * @return string
-     */
+    /** Extract the image URL from a comic XML object. */
     protected function extractImageUrl(SimpleXMLElement $comic): string
     {
         preg_match('/img\s+src="(?<image_url>.+)"/U', $comic->description, $matches);

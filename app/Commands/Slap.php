@@ -23,15 +23,8 @@ class Slap
         $this->objects = new Collection(self::OBJECTS);
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param BotMan $botman
-     * @param string $name
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, string $name)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, string $name): void
     {
         $botman->reply(sprintf(
             '<i>slaps %s around a bit with %s</i>', $name, $this->objects->random()

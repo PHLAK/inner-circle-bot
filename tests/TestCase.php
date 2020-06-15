@@ -20,11 +20,7 @@ class TestCase extends PHPUnitTestCase
     /** @var \BotMan\BotMan\BotMan Test BotMan component */
     protected $botman;
 
-    /**
-     * This method is called before each test.
-     *
-     * @return void
-     */
+    /** This method is called before each test. */
     public function setUp(): void
     {
         $this->container = (new ContainerBuilder)->addDefinitions(
@@ -45,11 +41,7 @@ class TestCase extends PHPUnitTestCase
     /**
      * Get the path to a test file.
      *
-     * @param string $file
-     *
      * @throws RuntimeException
-     *
-     * @return string
      */
     protected function path(string $file = '.'): string
     {

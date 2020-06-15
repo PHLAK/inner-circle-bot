@@ -12,11 +12,7 @@ class LogMessage implements Received
     /** @var LoggerInterface */
     protected $log;
 
-    /**
-     * Create a new MessageLogger object.
-     *
-     * @param \Psr\Log\LoggerInterface $logger
-     */
+    /** Create a new MessageLogger object. */
     public function __construct(LoggerInterface $logger)
     {
         $this->log = $logger;
@@ -25,11 +21,7 @@ class LogMessage implements Received
     /**
      * Handle an incoming message.
      *
-     * @param IncomingMessage $message
-     * @param callable        $next
-     * @param BotMan          $bot
-     *
-     * @return mixed
+     * @param callable $next
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {

@@ -25,16 +25,8 @@ class Btc
         'CAACAgIAAxkBAAIl-15C_0Qz1iKGBKzAHv2hJClW7u7OAAMGAAKW-hIFYZOr_0h87woYBA',
     ];
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param \BotMan\BotMan\BotMan            $botman
-     * @param string                           $date
-     * @param \App\Http\Clients\CoinbaseClient $coinbase
-     *
-     * @return void
-     */
-    public function __invoke(BotMan $botman, string $date = null, ?CoinbaseClient $coinbase = null)
+    /** Handle the incoming request. */
+    public function __invoke(BotMan $botman, ?string $date = null, ?CoinbaseClient $coinbase = null): void
     {
         if (Carbon::parse($date)->isFuture()) {
             $botman->sendRequest('sendSticker', [
@@ -63,13 +55,7 @@ class Btc
         ), ['parse_mode' => 'HTML']);
     }
 
-    /**
-     * Format a numeric value as currency.
-     *
-     * @param float $amount
-     *
-     * @return string
-     */
+    /** Format a numeric value as currency. */
     protected function formatCurrency(float $amount): string
     {
         $formatter = new NumberFormatter('en_US', NumberFormatter::CURRENCY);
