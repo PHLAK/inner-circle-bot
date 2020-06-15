@@ -14,7 +14,7 @@
 Requirements
 ------------
 
-  - [PHP](https://secure.php.net/) >= 7.3
+  - [PHP](https://secure.php.net/) >= 7.4
     - PHP [Internationalization Extension](https://www.php.net/manual/en/intro.intl.php)
 
 #### For development
