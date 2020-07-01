@@ -85,16 +85,16 @@
         },
         {
             "name": "botman/driver-telegram",
-            "version": "1.5.2",
+            "version": "1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-telegram.git",
-                "reference": "32ed131c73ee09791e320557340e663d90d7b45d"
+                "reference": "6c2f1df392174cbb81aadc015102ad8b3367a535"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/32ed131c73ee09791e320557340e663d90d7b45d",
-                "reference": "32ed131c73ee09791e320557340e663d90d7b45d",
+                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/6c2f1df392174cbb81aadc015102ad8b3367a535",
+                "reference": "6c2f1df392174cbb81aadc015102ad8b3367a535",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "bot",
                 "telegram"
             ],
-            "time": "2018-07-30T20:18:18+00:00"
+            "time": "2020-06-19T10:32:28+00:00"
         },
         {
             "name": "evenement/evenement",
