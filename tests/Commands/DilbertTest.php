@@ -10,6 +10,7 @@ use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use Tests\TestCase;
 
 /** @covers \App\Commands\Dilbert */
@@ -81,7 +82,11 @@ class DilbertTest extends TestCase
 
         $dilbert = $this->createMock(DilbertClient::class);
         $dilbert->expects($this->once())->method('latest')->willThrowException(
-            new ClientException("418 I'm a teapot", $this->createMock(Request::class))
+            new ClientException(
+                "418 I'm a teapot",
+                $this->createMock(Request::class),
+                $this->createMock(Response::class)
+            )
         );
 
         (new Dilbert)($botman, null, $dilbert);

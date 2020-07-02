@@ -10,6 +10,7 @@ use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use Tests\TestCase;
 
 /** @covers \App\Commands\MonkeyUser */
@@ -48,7 +49,11 @@ class MonkeyUserTest extends TestCase
 
         $monkeyuser = $this->createMock(MonkeyUserClient::class);
         $monkeyuser->expects($this->once())->method('latest')->willThrowException(
-            new ClientException("418 I'm a teapot", $this->createMock(Request::class))
+            new ClientException(
+                "418 I'm a teapot",
+                $this->createMock(Request::class),
+                $this->createMock(Response::class)
+            )
         );
 
         (new MonkeyUser)($botman, $monkeyuser);

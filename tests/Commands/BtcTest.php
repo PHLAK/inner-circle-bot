@@ -8,6 +8,7 @@ use BotMan\BotMan\BotMan;
 use Carbon\Carbon;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use Tests\TestCase;
 
 /** @covers \App\Commands\Btc */
@@ -81,7 +82,11 @@ class BtcTest extends TestCase
 
         $coinbase = $this->createMock(CoinbaseClient::class);
         $coinbase->expects($this->once())->method('currentPrice')->willThrowException(
-            new ClientException("418 I'm a teapot", $this->createMock(Request::class))
+            new ClientException(
+                "418 I'm a teapot",
+                $this->createMock(Request::class),
+                $this->createMock(Response::class)
+            )
         );
 
         (new Btc)($botman, null, $coinbase);

@@ -9,6 +9,7 @@ use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use Tests\TestCase;
 
 /** @covers \App\Commands\XKCD */
@@ -54,7 +55,11 @@ class XKCDTest extends TestCase
 
         $xkcd = $this->createMock(XKCDClient::class);
         $xkcd->expects($this->once())->method('latest')->willThrowException(
-            new ClientException("418 I'm a teapot", $this->createMock(Request::class))
+            new ClientException(
+                "418 I'm a teapot",
+                $this->createMock(Request::class),
+                $this->createMock(Response::class)
+            )
         );
 
         (new XKCD)($botman, null, $xkcd);

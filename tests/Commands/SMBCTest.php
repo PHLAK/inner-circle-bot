@@ -10,6 +10,7 @@ use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
+use Slim\Psr7\Response;
 use Tests\TestCase;
 
 /** @covers \App\Commands\SMBC */
@@ -48,7 +49,11 @@ class SMBCTest extends TestCase
 
         $smbc = $this->createMock(SMBCClient::class);
         $smbc->expects($this->once())->method('latest')->willThrowException(
-            new ClientException("418 I'm a teapot", $this->createMock(Request::class))
+            new ClientException(
+                "418 I'm a teapot",
+                $this->createMock(Request::class),
+                $this->createMock(Response::class)
+            )
         );
 
         (new SMBC)($botman, $smbc);
