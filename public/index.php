@@ -14,7 +14,8 @@ $container = (new ContainerBuilder)->addDefinitions(
     dirname(__DIR__) . '/config/app.php'
 );
 
-if (getenv('APP_DEBUG') !== 'true') {
+// Compile the container
+if (filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOLEAN) !== true) {
     $container->enableCompilation(dirname(__DIR__) . '/cache');
 }
 
