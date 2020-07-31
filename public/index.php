@@ -11,12 +11,12 @@ Dotenv::createUnsafeImmutable(dirname(__DIR__))->load();
 
 // Initialize the container
 $container = (new ContainerBuilder)->addDefinitions(
-    dirname(__DIR__) . '/config/app.php'
+    ...glob(dirname(__DIR__) . '/config/*.php')
 );
 
 // Compile the container
-if (filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOLEAN) !== true) {
-    $container->enableCompilation(dirname(__DIR__) . '/cache');
+if (! filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOL)) {
+    $container->enableCompilation(__DIR__ . '/app/cache');
 }
 
 // Initialize the application

@@ -22,7 +22,7 @@ class TestCase extends PHPUnitTestCase
     public function setUp(): void
     {
         $this->container = (new ContainerBuilder)->addDefinitions(
-            dirname(__DIR__) . '/config/app.php'
+            ...glob(dirname(__DIR__) . '/config/*.php')
         )->build();
 
         $this->config = new Config($this->container);
