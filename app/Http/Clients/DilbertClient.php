@@ -24,21 +24,6 @@ class DilbertClient
         ], $config));
     }
 
-    /** Fetch the latest comic. */
-    public function latest(): Comic
-    {
-        $html = (string) $this->client->get(
-            sprintf('strip/%s', Carbon::now('America/Phoenix')->format('Y-m-d'))
-        )->getBody();
-
-        return new Comic(
-            $this->extractTitle($html),
-            $this->extractDescription($html),
-            $this->extractImageUrl($html),
-            $this->extractSourceUrl($html)
-        );
-    }
-
     /** Fetch a comic by date. */
     public function byDate(Carbon $date): Comic
     {
@@ -54,19 +39,16 @@ class DilbertClient
         );
     }
 
+    /** Fetch the latest comic. */
+    public function latest(): Comic
+    {
+        return $this->byDate(Carbon::now('America/Phoenix'));
+    }
+
     /** Fetch a random comic. */
     public function random(): Comic
     {
-        $html = (string) $this->client->get(
-            sprintf('strip/%s', $this->randomDate()->format('Y-m-d'))
-        )->getBody();
-
-        return new Comic(
-            $this->extractTitle($html),
-            $this->extractDescription($html),
-            $this->extractImageUrl($html),
-            $this->extractSourceUrl($html)
-        );
+        return $this->byDate($this->randomDate());
     }
 
     /** Get a random date since the start date. */
