@@ -3,23 +3,23 @@
 namespace App\Factories;
 
 use App\Commands;
+use App\Config;
 use App\Middleware;
 use BotMan\BotMan;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\Drivers\Telegram\TelegramDriver;
-use DI\Container;
 use Psr\Log\LoggerInterface;
 use Tightenco\Collect\Support\Collection;
 
 class BotManFactory
 {
-    protected Container $container;
+    protected Config $config;
     protected LoggerInterface $logger;
 
     /** Create a new BotmanFactory object. */
-    public function __construct(Container $container, LoggerInterface $logger)
+    public function __construct(Config $config, LoggerInterface $logger)
     {
-        $this->container = $container;
+        $this->config = $config;
         $this->logger = $logger;
     }
 
@@ -29,15 +29,15 @@ class BotManFactory
         DriverManager::loadDriver(TelegramDriver::class);
 
         $botman = BotMan\BotManFactory::create(
-            $this->container->get('botman_config')
+            $this->config->get('botman_config')
         );
 
         $botman->middleware->received(new Middleware\LogMessage($this->logger));
         $botman->middleware->received(new Middleware\StripLeadingSlash);
-        $botman->middleware->received(new Middleware\StripBotName($this->container));
+        $botman->middleware->received(new Middleware\StripBotName($this->config));
         $botman->middleware->sending(new Middleware\LogResponse($this->logger));
 
-        Collection::make($this->container->get('commands'))->each(
+        Collection::make($this->config->get('commands'))->each(
             function (string $command, string $pattern) use ($botman) {
                 $botman->hears($pattern, $command);
             }

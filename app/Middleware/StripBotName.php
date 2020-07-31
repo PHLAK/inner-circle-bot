@@ -2,19 +2,19 @@
 
 namespace App\Middleware;
 
+use App\Config;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Interfaces\Middleware\Received;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
-use DI\Container;
 
 class StripBotName implements Received
 {
-    protected Container $container;
+    protected Config $config;
 
     /** Create a new StripBotName object. */
-    public function __construct(Container $container)
+    public function __construct(Config $config)
     {
-        $this->container = $container;
+        $this->config = $config;
     }
 
     /**
@@ -24,7 +24,7 @@ class StripBotName implements Received
      */
     public function received(IncomingMessage $message, $next, BotMan $bot)
     {
-        $botName = (string) $this->container->get('bot_name');
+        $botName = (string) $this->config->get('bot_name');
 
         if (preg_match("/^[^@\s]+@{$botName}.*$/", $message->getText())) {
             $canonicalized = preg_replace("/@{$botName}/", '', $message->getText());

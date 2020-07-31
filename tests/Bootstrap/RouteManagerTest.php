@@ -17,6 +17,6 @@ class RouteManagerTest extends TestCase
             '/TEST_TELEGRAM_TOKEN', Controllers\Telegram::class
         );
 
-        (new RouteManager($app, $this->container))();
+        (new RouteManager($app, $this->config))();
     }
 }

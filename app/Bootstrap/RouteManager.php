@@ -2,25 +2,25 @@
 
 namespace App\Bootstrap;
 
+use App\Config;
 use App\Controllers;
-use DI\Container;
 use Slim\App;
 
 class RouteManager
 {
     protected App $app;
-    protected Container $container;
+    protected Config $config;
 
-    public function __construct(App $app, Container $container)
+    public function __construct(App $app, Config $config)
     {
         $this->app = $app;
-        $this->container = $container;
+        $this->config = $config;
     }
 
     public function __invoke()
     {
         $this->app->post(
-            sprintf('/%s', $this->container->get('telegram_token')),
+            sprintf('/%s', $this->config->get('telegram_token')),
             Controllers\Telegram::class
         );
     }

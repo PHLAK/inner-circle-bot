@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Commands;
+use App\Config;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Drivers\DriverManager;
@@ -24,12 +25,13 @@ class TestCase extends PHPUnitTestCase
             dirname(__DIR__) . '/config/app.php'
         )->build();
 
+        $this->config = new Config($this->container);
         $this->container->set('base_path', $this->path());
         $this->container->set('commands', ['ping' => Commands\Ping::class]);
 
         DriverManager::loadDriver(ProxyDriver::class);
         $this->botman = BotManFactory::create(
-            $this->container->get('botman_config')
+            $this->config->get('botman_config')
         );
 
         $this->container->set(BotMan::class, $this->botman);
