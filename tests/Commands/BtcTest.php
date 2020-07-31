@@ -14,20 +14,6 @@ use Tests\TestCase;
 /** @covers \App\Commands\Btc */
 class BtcTest extends TestCase
 {
-    /** @const Array of sticker IDs */
-    protected const STICKER_IDS = [
-        'CAACAgIAAxkBAAIl5F5C_iECLpOpC7_O_FZai2Ki9_sEAAIrBgAClvoSBWfibcvyr59BGAQ',
-        'CAACAgIAAxkBAAIl615C_tsPcny0eJxr9i7SG6o3BeDrAAIUBgAClvoSBRQaZ_yiYCJvGAQ',
-        'CAACAgIAAxkBAAIl7V5C_uoYJ5l91n8WNMEBSFov46DKAAL8BQAClvoSBfP45oIb_tb9GAQ',
-        'CAACAgIAAxkBAAIl715C_vjocN4BQu86UT1r49vxdnwzAAIIBgAClvoSBcJQcBHeJ36WGAQ',
-        'CAACAgIAAxkBAAIl8V5C_wg_D42ZAULQB_IbM6CK_T8-AAIkBgAClvoSBdvpo6DwpLO-GAQ',
-        'CAACAgIAAxkBAAIl815C_xTjj9LYupGrPsZNFZnPbiqAAAImBgAClvoSBT54uAwflqC1GAQ',
-        'CAACAgIAAxkBAAIl9V5C_xs7xP3cHnmp3ImR1dklc9C_AAL5BQAClvoSBWGMTeRYo89hGAQ',
-        'CAACAgIAAxkBAAIl915C_yZalVj1b7YNPteAaJxJMCMxAAIjBgAClvoSBRG5NgABoPOWfBgE',
-        'CAACAgIAAxkBAAIl-V5C_zO1VBU1TT9asHdmORgL7FCNAAIhBgAClvoSBZR14Lgl_SMkGAQ',
-        'CAACAgIAAxkBAAIl-15C_0Qz1iKGBKzAHv2hJClW7u7OAAMGAAKW-hIFYZOr_0h87woYBA',
-    ];
-
     public function test_it_can_get_the_current_price(): void
     {
         $botman = $this->createMock(BotMan::class);
@@ -66,7 +52,7 @@ class BtcTest extends TestCase
         $botman->expects($this->once())->method('sendRequest')->with(
             'sendSticker',
             $this->callback(function (array $parameter): bool {
-                return in_array($parameter['sticker'], self::STICKER_IDS);
+                return in_array($parameter['sticker'], Btc::STICKER_IDS);
             })
         );
 

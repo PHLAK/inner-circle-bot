@@ -7,7 +7,7 @@ use BotMan\BotMan\BotMan;
 class Fallback
 {
     /** @const Array of possible replies */
-    protected const REPLIES = [
+    public const REPLIES = [
         "I'm sorry Dave, I'm afraid I can't do that.",
         "I don't understand...",
         'Come again?',

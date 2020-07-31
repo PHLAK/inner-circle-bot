@@ -7,7 +7,7 @@ use BotMan\BotMan\BotMan;
 class Eightball
 {
     /** @const Array of possible answers */
-    protected const ANSWERS = [
+    public const ANSWERS = [
         'It is certain',
         'It is decidedly so',
         'Without a doubt',

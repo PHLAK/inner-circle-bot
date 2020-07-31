@@ -12,7 +12,7 @@ use Tightenco\Collect\Support\Collection;
 class Btc
 {
     /** @const Array of sticker IDs */
-    protected const STICKER_IDS = [
+    public const STICKER_IDS = [
         'CAACAgIAAxkBAAIl5F5C_iECLpOpC7_O_FZai2Ki9_sEAAIrBgAClvoSBWfibcvyr59BGAQ',
         'CAACAgIAAxkBAAIl615C_tsPcny0eJxr9i7SG6o3BeDrAAIUBgAClvoSBRQaZ_yiYCJvGAQ',
         'CAACAgIAAxkBAAIl7V5C_uoYJ5l91n8WNMEBSFov46DKAAL8BQAClvoSBfP45oIb_tb9GAQ',

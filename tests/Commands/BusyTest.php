@@ -9,37 +9,6 @@ use Tests\TestCase;
 /** @covers \App\Commands\Busy */
 class BusyTest extends TestCase
 {
-    /** @const Array of verbs */
-    protected const VERBS = [
-        'absorbing', 'adjusting', 'allocating', 'compiling', 'compressing',
-        'deallocating', 'decoding', 'decompliling', 'decompressing',
-        'decrypting', 'demultiplexing', 'disabling', 'enabling', 'encoding',
-        'encrypting', 'factoring', 'generating', 'indexing', 'initializing',
-        'mapping', 'multiplexing', 'parsing', 'prioritizing', 'reordering',
-        'resolving', 'reticulating', 'routing', 'sorting', 'transcoding',
-        'upgrading', 'unravelling'
-    ];
-
-    /** @const Array of adjecetives */
-    protected const ADJECTIVES = [
-        'active', 'associative', 'bi-directional', 'corrupt', 'complex',
-        'cybernetic', 'dank', 'deterministic', 'duplicate', 'dynamic',
-        'ethereal', 'euclidean', 'finite', 'high-level', 'infinite', 'inverse',
-        'linked', 'low-level', 'multi-dimensional', 'negative', 'non-euclidean',
-        'positive', 'prallel', 'quantifiable', 'random', 'sentient', 'static',
-        'sub-zero', 'tertiary', 'unlinked', 'unusual', 'well-documented',
-        'vectorized', '' // Intentionally blank
-    ];
-
-    /** @const Array of nouns */
-    protected const NOUNS = [
-        'algorithms', 'archives', 'arrays', 'caches', 'coprocesses', 'cores',
-        'datasets', 'fields', 'frames', 'functions', 'datastores', 'lists',
-        'matrices', 'objects', 'procedures', 'processes', 'queues',
-        'receptacles', 'repositories', 'sectors', 'segments', 'sequences',
-        'splines', 'states', 'structures', 'tables', 'threads'
-    ];
-
     public function test_it_respond_with_a_busy_message(): void
     {
         $botman = $this->createMock(BotMan::class);
@@ -48,15 +17,15 @@ class BusyTest extends TestCase
                 preg_match('/(?<verb>[\w-]+) (?<adjective>[\w-]+)? (?<noun>[\w-]+)/', $parameter, $matches);
                 extract($matches);
 
-                if (! in_array($verb, self::VERBS)) {
+                if (! in_array($verb, Busy::VERBS)) {
                     return false;
                 }
 
-                if (! in_array($adjective, self::ADJECTIVES)) {
+                if (! in_array($adjective, Busy::ADJECTIVES)) {
                     return false;
                 }
 
-                if (! in_array($noun, self::NOUNS)) {
+                if (! in_array($noun, Busy::NOUNS)) {
                     return false;
                 }
 

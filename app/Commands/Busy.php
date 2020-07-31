@@ -8,7 +8,7 @@ use Tightenco\Collect\Support\Collection;
 class Busy
 {
     /** @const Array of verbs */
-    protected const VERBS = [
+    public const VERBS = [
         'absorbing', 'adjusting', 'allocating', 'compiling', 'compressing',
         'deallocating', 'decoding', 'decompliling', 'decompressing',
         'decrypting', 'demultiplexing', 'disabling', 'enabling', 'encoding',
@@ -19,7 +19,7 @@ class Busy
     ];
 
     /** @const Array of adjecetives */
-    protected const ADJECTIVES = [
+    public const ADJECTIVES = [
         'active', 'associative', 'bi-directional', 'corrupt', 'complex',
         'cybernetic', 'dank', 'deterministic', 'duplicate', 'dynamic',
         'ethereal', 'euclidean', 'finite', 'high-level', 'infinite', 'inverse',
@@ -30,7 +30,7 @@ class Busy
     ];
 
     /** @const Array of nouns */
-    protected const NOUNS = [
+    public const NOUNS = [
         'algorithms', 'archives', 'arrays', 'caches', 'coprocesses', 'cores',
         'datasets', 'fields', 'frames', 'functions', 'datastores', 'lists',
         'matrices', 'objects', 'procedures', 'processes', 'queues',
