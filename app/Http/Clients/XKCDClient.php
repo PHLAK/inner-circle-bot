@@ -30,7 +30,7 @@ class XKCDClient
     /** Fetch a comic by ID. */
     public function byId(int $id): stdClass
     {
-        $response = $this->client->get("{$id}/info.0.json");
+        $response = $this->client->get(sprintf('%s/info.0.json', $id));
 
         return json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR);
     }
