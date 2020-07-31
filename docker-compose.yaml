@@ -13,7 +13,6 @@ services:
       - host.docker.internal:${DOCKER_HOST_IP}
     volumes:
       - ./:/var/www/html
-    restart: on-failure
 
 networks:
   default:
