@@ -9,10 +9,14 @@ class Slap
 {
     /** @const Array of objects */
     public const OBJECTS = [
-        'a big black cock',
-        'an iron gauntlet',
+        'a french baguette',
         'a large trout',
         'a soggy noodle',
+        'a strip of bacon',
+        'a large waffle',
+        'an iron gauntlet',
+        'string cheese',
+        'the back of their hand',
     ];
 
     protected Collection $objects;
