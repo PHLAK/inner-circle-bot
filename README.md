@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="the-inner-circle-bot.svg" alt="The Inner Circle Bot" width="80%">
+    <img src="the-inner-circle-bot.svg" alt="The Inner Circle Bot" width="80%">
 </p>
 
 <p align="center">
-  <a href="https://github.com/TheInnerCircleO/icbot-2/blob/master/LICENSE"><img src="https://img.shields.io/github/license/TheInnerCircleO/icbot-2?style=flat-square" alt="License"></a>
-  <a href="https://travis-ci.org/TheInnerCircleO/icbot-2"><img src="https://img.shields.io/travis/TheInnerCircleO/icbot-2.svg?style=flat-square" alt="Build Status"></a>
-  <a href="https://github.styleci.io/repos/229117477"><img src="https://github.styleci.io/repos/229117477/shield?branch=master" alt="StyleCI"></a>
-  <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/Created_by-Chris%20Kankiewicz-319795.svg?style=flat-square" alt="Author"></a>
+    <a href="https://github.com/PHLAK/inner-circle-bot/blob/master/LICENSE"><img src="https://img.shields.io/github/license/PHLAK/inner-circle-bot?style=flat-square" alt="License"></a>
+    <a href="https://travis-ci.org/PHLAK/inner-circle-bot"><img src="https://img.shields.io/travis/PHLAK/inner-circle-bot.svg?style=flat-square" alt="Build Status"></a>
+    <a href="https://github.styleci.io/repos/229117477"><img src="https://github.styleci.io/repos/229117477/shield?branch=master" alt="StyleCI"></a>
+    <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/Created_by-Chris%20Kankiewicz-319795.svg?style=flat-square" alt="Author"></a>
 </p>
 
 ---
@@ -105,9 +105,9 @@ List of Commands
 Troubleshooting
 ---------------
 
-Please report bugs to the [GitHub Issue Tracker](https://github.com/TheInnerCircleO/icbot-2/issues).
+Please report bugs to the [GitHub Issue Tracker](https://github.com/PHLAK/inner-circle-bot/issues).
 
 Copyright
 ---------
 
-This project is licensed under the [MIT License](https://github.com/TheInnerCircleO/icbot-2/blob/master/LICENSE).
+This project is licensed under the [MIT License](https://github.com/PHLAK/inner-circle-bot/blob/master/LICENSE).
