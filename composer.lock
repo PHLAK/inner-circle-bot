@@ -2652,16 +2652,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v6.18.25",
+            "version": "v6.18.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "73d6d1ba59edafa551bd810a299727dc5f81a714"
+                "reference": "624b86cde21f8d9ba14ec0e4974ef0aca3922a1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/73d6d1ba59edafa551bd810a299727dc5f81a714",
-                "reference": "73d6d1ba59edafa551bd810a299727dc5f81a714",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/624b86cde21f8d9ba14ec0e4974ef0aca3922a1c",
+                "reference": "624b86cde21f8d9ba14ec0e4974ef0aca3922a1c",
                 "shasum": ""
             },
             "require": {
@@ -2698,7 +2698,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2020-07-10T22:16:31+00:00"
+            "time": "2020-08-21T22:25:58+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
