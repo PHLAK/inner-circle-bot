@@ -16,7 +16,7 @@ $container = (new ContainerBuilder)->addDefinitions(
 
 // Compile the container
 if (! filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOL)) {
-    $container->enableCompilation(__DIR__ . '/app/cache');
+    $container->enableCompilation(dirname(__DIR__) . '/cache');
 }
 
 // Initialize the application
