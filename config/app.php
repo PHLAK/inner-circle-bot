@@ -31,6 +31,7 @@ return [
         'dilbert(?: (.+))?' => Commands\Dilbert::class,
         'eightball(?: (.+))?' => Commands\Eightball::class,
         'explosm(?: ([0-9]+))?' => Commands\Explosm::class,
+        'foxtrot(?: ([0-9]+))?' => Commands\FoxTrot::class,
         'monkeyuser' => Commands\MonkeyUser::class,
         'ping' => Commands\Ping::class,
         'roll ([0-9]+)d([0-9]+)' => Commands\Roll::class,

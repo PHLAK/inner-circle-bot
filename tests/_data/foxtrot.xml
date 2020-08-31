@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    xmlns:georss="http://www.georss.org/georss"
+    xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+
+<channel>
+    <title>FoxTrot Comics by Bill Amend</title>
+    <atom:link href="https://foxtrot.com/feed/" rel="self" type="application/rss+xml" />
+    <link>https://foxtrot.com</link>
+    <description>Official home of Bill Amend&#039;s FoxTrot comic strip. New comics every Sunday!</description>
+    <lastBuildDate>Fri, 28 Aug 2020 18:37:31 +0000</lastBuildDate>
+    <language>en-US</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <generator>https://wordpress.org/?v=5.4.2</generator>
+
+    <image>
+        <url>https://foxtrot.com/wp-content/uploads/2020/05/cropped-favicon-quincy-1-32x32.png</url>
+        <title>FoxTrot Comics by Bill Amend</title>
+        <link>https://foxtrot.com</link>
+        <width>32</width>
+        <height>32</height>
+    </image>
+
+    <site xmlns="com-wordpress:feed-additions:1">71435162</site>
+        <item>
+            <title>Test comic; please ignore</title>
+            <link>https://foxtrot.com/comic/test</link>
+            <dc:creator><![CDATA[Bill Amend]]></dc:creator>
+            <pubDate>SuTue, 20 May 1986 12:34:56 +0000</pubDate>
+            <category><![CDATA[2011]]></category>
+            <category><![CDATA[Comics]]></category>
+            <category><![CDATA[computers]]></category>
+            <category><![CDATA[eileen]]></category>
+            <category><![CDATA[jason]]></category>
+            <category><![CDATA[school]]></category>
+            <guid isPermaLink="false">http://foxtrot.com/?p=1337</guid>
+            <description><![CDATA[]]></description>
+            <post-id xmlns="com-wordpress:feed-additions:1">4172</post-id>
+        </item>
+
+        <item>
+            <title>Yet another comic</title>
+            <link>https://foxtrot.com/comic/another-test</link>
+            <dc:creator><![CDATA[Bill Amend]]></dc:creator>
+            <pubDate>Mon, 19 May 1987 12:34:56 +0000</pubDate>
+            <category><![CDATA[2020]]></category>
+            <category><![CDATA[Comics]]></category>
+            <category><![CDATA[food]]></category>
+            <category><![CDATA[ice cream]]></category>
+            <category><![CDATA[paige]]></category>
+            <category><![CDATA[peter]]></category>
+            <guid isPermaLink="false">http://foxtrot.com/?p=4242</guid>
+            <description><![CDATA[]]></description>
+            <post-id xmlns="com-wordpress:feed-additions:1">4114</post-id>
+        </item>
+    </channel>
+</rss>
