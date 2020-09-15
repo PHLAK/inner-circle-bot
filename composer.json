@@ -12,7 +12,7 @@
     "require": {
         "php": ">=7.4",
         "ext-intl": "*",
-        "botman/botman": "^2.5",
+        "botman/botman": "^2.6",
         "botman/driver-telegram": "^1.5",
         "guzzlehttp/guzzle": "^7.0",
         "monolog/monolog": "^2.0",
@@ -20,7 +20,7 @@
         "php-di/slim-bridge": "^3.0",
         "slim/psr7": "^1.0",
         "slim/slim": "^4.3",
-        "tightenco/collect": "^5.0 || ^6.0 || ^7.0",
+        "tightenco/collect": "^5.0 || ^6.0 || ^7.0 || ^8.0",
         "vlucas/phpdotenv": "^5.0"
     },
     "require-dev": {
