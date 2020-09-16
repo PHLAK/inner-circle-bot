@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php" colors="true">
+<phpunit bootstrap="vendor/autoload.php" colors="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">app/</directory>
+        </include>
+    </coverage>
     <testsuites>
         <testsuite name="ICBot-2.0 Test Suite">
             <directory suffix="Test.php">tests/</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">app/</directory>
-        </whitelist>
-    </filter>
     <php>
         <env name="BOT_NAME" value="TestBot" />
         <env name="TELEGRAM_TOKEN" value="TEST_TELEGRAM_TOKEN" />
