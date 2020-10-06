@@ -85,28 +85,28 @@
         },
         {
             "name": "botman/driver-telegram",
-            "version": "1.6",
+            "version": "1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-telegram.git",
-                "reference": "6c2f1df392174cbb81aadc015102ad8b3367a535"
+                "reference": "a26872d971878b8e7163019036299a2eac2794a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/6c2f1df392174cbb81aadc015102ad8b3367a535",
-                "reference": "6c2f1df392174cbb81aadc015102ad8b3367a535",
+                "url": "https://api.github.com/repos/botman/driver-telegram/zipball/a26872d971878b8e7163019036299a2eac2794a2",
+                "reference": "a26872d971878b8e7163019036299a2eac2794a2",
                 "shasum": ""
             },
             "require": {
-                "botman/botman": "~2.0",
+                "botman/botman": "^2.0",
                 "php": ">=7.0"
             },
             "require-dev": {
-                "botman/studio-addons": "~1.0",
+                "botman/studio-addons": "^1.0",
                 "ext-curl": "*",
-                "illuminate/contracts": "~5.5.0",
-                "mockery/mockery": "dev-master",
-                "phpunit/phpunit": "~5.0"
+                "illuminate/contracts": "^5.5",
+                "mockery/mockery": "^1.1",
+                "phpunit/phpunit": "^5.0"
             },
             "type": "library",
             "extra": {
@@ -138,7 +138,7 @@
                 "bot",
                 "telegram"
             ],
-            "time": "2020-06-19T10:32:28+00:00"
+            "time": "2020-09-24T03:40:55+00:00"
         },
         {
             "name": "evenement/evenement",
