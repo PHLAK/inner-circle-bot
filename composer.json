@@ -27,7 +27,7 @@
         "friendsofphp/php-cs-fixer": "^2.16",
         "phpunit/phpunit": "^9.0",
         "psy/psysh": "^0.10",
-        "vimeo/psalm": "^3.7"
+        "vimeo/psalm": "^4.2"
     },
     "autoload": {
         "psr-4": {

@@ -2,7 +2,6 @@
 <psalm
     totallyTyped="false"
     resolveFromConfigFile="true"
-    requireVoidReturnType="true"
     findUnusedVariablesAndParams="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -46,7 +45,6 @@
         <MissingReturnType errorLevel="info" />
         <MissingPropertyType errorLevel="info" />
         <InvalidDocblock errorLevel="info" />
-        <MisplacedRequiredParam errorLevel="info" />
 
         <PropertyNotSetInConstructor errorLevel="info" />
         <MissingConstructor errorLevel="info" />
