@@ -2,15 +2,13 @@ version: '3.4'
 
 services:
   app:
-    container_name: icbot-app
-    build:
-      context: .
-      target: development
+    container_name: inner-circle-bot-app
+    build: .
     environment:
-      TZ: America/Phoenix
-      VIRTUAL_HOST: icbot.local
+      TZ: ${APP_TZ:-America/Phoenix}
+      VIRTUAL_HOST: ${APP_URL:-icbot.local}
     extra_hosts:
-      - host.docker.internal:${DOCKER_HOST_IP}
+      - host.docker.internal:${DOCKER_HOST_IP:-0.0.0.0}
     volumes:
       - ./:/var/www/html
 
