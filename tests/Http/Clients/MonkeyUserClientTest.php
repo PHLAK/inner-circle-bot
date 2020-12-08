@@ -11,7 +11,8 @@ use Tests\TestCase;
 /** @covers \App\Http\Clients\MonkeyUserClient */
 class MonkeyUserClientTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $comic = $this->mockMonkeyUserClient()->latest();
 
@@ -29,9 +30,9 @@ class MonkeyUserClientTest extends TestCase
                 new MockHandler($responses ?? [
                     new Response(200, [], file_get_contents(
                         $this->path('monkeyuser.xml')
-                    ))
+                    )),
                 ])
-            )
+            ),
         ]);
     }
 }

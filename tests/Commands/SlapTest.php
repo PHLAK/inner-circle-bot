@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Slap */
 class SlapTest extends TestCase
 {
-    public function test_it_can_slap_someone_with_a_random_object(): void
+    /** @test */
+    public function it_can_slap_someone_with_a_random_object(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(

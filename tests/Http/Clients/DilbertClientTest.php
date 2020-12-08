@@ -12,7 +12,8 @@ use Tests\TestCase;
 /** @covers \App\Http\Clients\DilbertClient */
 class DilbertClientTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $comic = $this->mockDilbertClient()->latest();
 
@@ -22,7 +23,8 @@ class DilbertClientTest extends TestCase
         $this->assertEquals('http://dilbert.com/strip/1986-05-20', $comic->sourceUrl);
     }
 
-    public function test_it_can_fetch_a_comic_by_date(): void
+    /** @test */
+    public function it_can_fetch_a_comic_by_date(): void
     {
         $comic = $this->mockDilbertClient()->byDate(
             Carbon::parse('1986-05-20')
@@ -34,7 +36,8 @@ class DilbertClientTest extends TestCase
         $this->assertEquals('http://dilbert.com/strip/1986-05-20', $comic->sourceUrl);
     }
 
-    public function test_it_can_fetch_a_random_comic(): void
+    /** @test */
+    public function it_can_fetch_a_random_comic(): void
     {
         $comic = $this->mockDilbertClient()->random();
 
@@ -52,9 +55,9 @@ class DilbertClientTest extends TestCase
                 new MockHandler($responses ?? [
                     new Response(200, [], file_get_contents(
                         $this->path('dilbert.html')
-                    ))
+                    )),
                 ])
-            )
+            ),
         ]);
     }
 }

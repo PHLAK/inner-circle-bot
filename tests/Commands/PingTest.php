@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Ping */
 class PingTest extends TestCase
 {
-    public function test_it_responds_to_a_ping(): void
+    /** @test */
+    public function it_responds_to_a_ping(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with('pong');

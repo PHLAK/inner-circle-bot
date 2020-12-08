@@ -16,7 +16,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\SMBC */
 class SMBCTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -40,7 +41,8 @@ class SMBCTest extends TestCase
         (new SMBC)($botman, $smbc);
     }
 
-    public function test_it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void
+    /** @test */
+    public function it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(

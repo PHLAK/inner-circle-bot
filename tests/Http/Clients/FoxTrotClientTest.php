@@ -11,7 +11,8 @@ use Tests\TestCase;
 /** @covers \App\Http\Clients\FoxTrotClient */
 class FoxTrotClientTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $comic = $this->mockFoxTrotClient()->latest();
 
@@ -30,7 +31,7 @@ class FoxTrotClientTest extends TestCase
                     new Response(200, [], file_get_contents($this->path('foxtrot.xml'))),
                     new Response(200, [], file_get_contents($this->path('foxtrot.html'))),
                 ])
-            )
+            ),
         ]);
     }
 }

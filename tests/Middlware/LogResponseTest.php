@@ -9,12 +9,13 @@ use Tests\TestCase;
 /** @covers \App\Middleware\LogResponse */
 class LogResponseTest extends TestCase
 {
-    public function test_it_logs_the_incoming_message(): void
+    /** @test */
+    public function it_logs_the_incoming_message(): void
     {
         $logger = $this->createMock(Logger::class);
         $logger->expects($this->once())->method('info')->with('Outgoing response', [
             'chat_id' => 1337,
-            'text' => 'Test response; please ignore'
+            'text' => 'Test response; please ignore',
         ]);
 
         $middleware = new LogResponse($logger);

@@ -9,35 +9,38 @@ use Tests\TestCase;
 /** @covers \App\Commands\Roll */
 class RollTest extends TestCase
 {
-    public function test_it_can_roll_a_single_die(): void
+    /** @test */
+    public function it_can_roll_a_single_die(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->exactly(2))->method('reply')->withConsecutive([
             $this->callback(function (string $argument): bool {
                 return (bool) preg_match('/Rolling 1 × 100 sided die.../', $argument);
-            })
+            }),
         ], [
             $this->callback(function (string $argument): bool {
                 return (bool) preg_match('/\[ (\d+) \] Total: \1/', $argument);
-            })
+            }),
         ]);
 
         (new Roll)($botman, 1, 100);
     }
 
-    public function test_it_can_roll_multiple_dice(): void
+    /** @test */
+    public function it_can_roll_multiple_dice(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->exactly(2))->method('reply')->withConsecutive([
-            $this->matchesRegularExpression('/Rolling 2 × 20 sided dice.../')
+            $this->matchesRegularExpression('/Rolling 2 × 20 sided dice.../'),
         ], [
-            $this->matchesRegularExpression('/\[ \d+, \d+ \] Total: \d+/')
+            $this->matchesRegularExpression('/\[ \d+, \d+ \] Total: \d+/'),
         ]);
 
         (new Roll)($botman, 2, 20);
     }
 
-    public function test_it_limits_the_number_of_dice_rolled(): void
+    /** @test */
+    public function it_limits_the_number_of_dice_rolled(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -47,7 +50,8 @@ class RollTest extends TestCase
         (new Roll)($botman, 301, 20);
     }
 
-    public function test_it_limits_the_maximum_die_value(): void
+    /** @test */
+    public function it_limits_the_maximum_die_value(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(

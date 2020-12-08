@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Bootstrap\AppManager */
 class AppManangerTest extends TestCase
 {
-    public function test_it_returns_an_app_instance()
+    /** @test */
+    public function it_returns_an_app_instance()
     {
         $app = (new AppManager($this->container))();
 

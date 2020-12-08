@@ -12,7 +12,8 @@ use Tests\TestCase;
 /** @covers \App\Http\Clients\CoinbaseClient */
 class CoinbaseClientTest extends TestCase
 {
-    public function test_it_can_fetch_the_current_price(): void
+    /** @test */
+    public function it_can_fetch_the_current_price(): void
     {
         $btc = $this->mockCoinbaseClient()->currentPrice();
 
@@ -21,7 +22,8 @@ class CoinbaseClientTest extends TestCase
         $this->assertEquals($btc->data->amount, 1337.42);
     }
 
-    public function test_it_can_fetch_the_price_from_a_specific_date(): void
+    /** @test */
+    public function it_can_fetch_the_price_from_a_specific_date(): void
     {
         $btc = $this->mockCoinbaseClient()->priceOn(
             Carbon::parse('1986-05-20')
@@ -41,10 +43,10 @@ class CoinbaseClientTest extends TestCase
                             'base' => 'BTC',
                             'currency' => 'USD',
                             'amount' => 1337.42,
-                        ]
-                    ]))
+                        ],
+                    ])),
                 ])
-            )
+            ),
         ]);
     }
 }

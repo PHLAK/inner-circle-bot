@@ -11,7 +11,8 @@ use Tests\TestCase;
 /** @covers \App\Controllers\Telegram */
 class TelegramTest extends TestCase
 {
-    public function test_it_returns_a_successful_response(): void
+    /** @test */
+    public function it_returns_a_successful_response(): void
     {
         $controller = new Telegram;
 

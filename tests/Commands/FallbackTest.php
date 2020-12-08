@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Fallback */
 class FallbackTest extends TestCase
 {
-    public function test_it_responds_with_a_random_reply(): void
+    /** @test */
+    public function it_responds_with_a_random_reply(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('randomReply')->with(Fallback::REPLIES);

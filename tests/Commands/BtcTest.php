@@ -14,7 +14,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Btc */
 class BtcTest extends TestCase
 {
-    public function test_it_can_get_the_current_price(): void
+    /** @test */
+    public function it_can_get_the_current_price(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -30,7 +31,8 @@ class BtcTest extends TestCase
         (new Btc)($botman, null, $coinbase);
     }
 
-    public function test_it_can_get_the_historical_price(): void
+    /** @test */
+    public function it_can_get_the_historical_price(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -46,7 +48,8 @@ class BtcTest extends TestCase
         (new Btc)($botman, '1986-05-20', $coinbase);
     }
 
-    public function test_it_can_get_the_future_price(): void
+    /** @test */
+    public function it_can_get_the_future_price(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('sendRequest')->with(
@@ -59,7 +62,8 @@ class BtcTest extends TestCase
         (new Btc)($botman, '2986-05-20', $this->createMock(CoinbaseClient::class));
     }
 
-    public function test_it_returns_an_error_message_when_it_fails_to_fetch_the_price(): void
+    /** @test */
+    public function it_returns_an_error_message_when_it_fails_to_fetch_the_price(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->willReturn(

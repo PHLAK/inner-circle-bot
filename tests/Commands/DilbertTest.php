@@ -16,7 +16,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Dilbert */
 class DilbertTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -35,7 +36,8 @@ class DilbertTest extends TestCase
         (new Dilbert)($botman, null, $dilbert);
     }
 
-    public function test_it_can_fetch_a_comic_by_date(): void
+    /** @test */
+    public function it_can_fetch_a_comic_by_date(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -54,7 +56,8 @@ class DilbertTest extends TestCase
         (new Dilbert)($botman, '1986-05-20', $dilbert);
     }
 
-    public function test_it_can_fetch_a_random_comic(): void
+    /** @test */
+    public function it_can_fetch_a_random_comic(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(
@@ -73,7 +76,8 @@ class DilbertTest extends TestCase
         (new Dilbert)($botman, 'random', $dilbert);
     }
 
-    public function test_it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void
+    /** @test */
+    public function it_returns_an_error_message_when_it_fails_to_fetch_a_comic(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->willReturn(

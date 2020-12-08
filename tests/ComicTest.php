@@ -4,9 +4,11 @@ namespace Tests;
 
 use App\Comic;
 
+/** @covers \App\Comic */
 class ComicTest extends TestCase
 {
-    public function test_it_can_be_instantiated(): void
+    /** @test */
+    public function it_can_be_instantiated(): void
     {
         $comic = new Comic(
             'Test title; please ignore',

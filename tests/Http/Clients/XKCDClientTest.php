@@ -11,7 +11,8 @@ use PHPUnit\Framework\TestCase;
 /** @covers \App\Http\Clients\XKCDClient */
 class XKCDClientTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $comic = $this->mockXKCDCLient()->latest();
 
@@ -21,7 +22,8 @@ class XKCDClientTest extends TestCase
         $this->assertEquals('https://imgs.xkcd.com/comics/example.png', $comic->img);
     }
 
-    public function test_it_can_fetch_a_comic_by_id(): void
+    /** @test */
+    public function it_can_fetch_a_comic_by_id(): void
     {
         $comic = $this->mockXKCDCLient()->byId(1337);
 
@@ -49,9 +51,9 @@ class XKCDClientTest extends TestCase
                         'img' => 'https://imgs.xkcd.com/comics/example.png',
                         'title' => 'Test title; please ignore',
                         'day' => '20',
-                    ]))
+                    ])),
                 ])
-            )
+            ),
         ]);
     }
 }

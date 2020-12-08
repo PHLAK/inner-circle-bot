@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Middleware\StripLeadingSlash */
 class StripLeadingSlashTest extends TestCase
 {
-    public function test_it_strips_a_leading_slash_from_a_command(): void
+    /** @test */
+    public function it_strips_a_leading_slash_from_a_command(): void
     {
         $middleware = new StripLeadingSlash();
 
@@ -22,7 +23,8 @@ class StripLeadingSlashTest extends TestCase
         $this->assertEquals('test argument', $message->getText());
     }
 
-    public function test_a_message_without_leading_slash_remains_unchanged(): void
+    /** @test */
+    public function a_message_without_leading_slash_remains_unchanged(): void
     {
         $middleware = new StripLeadingSlash();
 

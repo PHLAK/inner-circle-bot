@@ -18,8 +18,8 @@ class Config
     /**
      * Get the value of a configuration vairable.
      *
-     * @param string $key     The unique configuration variable ID
-     * @param mixed  $default Default value to return if no environment variable is set
+     * @param string $key The unique configuration variable ID
+     * @param mixed $default Default value to return if no environment variable is set
      *
      * @return mixed
      */

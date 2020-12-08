@@ -10,7 +10,8 @@ use Tests\TestCase;
 /** @covers \App\Bootstrap\RouteManager */
 class RouteManagerTest extends TestCase
 {
-    public function test_it_registers_application_routes(): void
+    /** @test */
+    public function it_registers_application_routes(): void
     {
         $app = $this->createMock(App::class);
         $app->expects($this->once())->method('post')->with(

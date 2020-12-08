@@ -20,14 +20,17 @@ class Dilbert
             switch ($date) {
                 case null:
                     $comic = $dilbert->latest();
+
                     break;
 
                 case 'random':
                     $comic = $dilbert->random();
+
                     break;
 
                 default:
                     $comic = $dilbert->byDate(Carbon::parse($date, 'America/Phoenix'));
+
                     break;
             }
         } catch (ClientException $exception) {

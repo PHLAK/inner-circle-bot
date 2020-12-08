@@ -20,7 +20,7 @@ class LogResponse implements Sending
      * Handle an outgoing message payload before/after it
      * hits the message service.
      *
-     * @param mixed    $payload
+     * @param mixed $payload
      * @param callable $next
      */
     public function sending($payload, $next, BotMan $bot)

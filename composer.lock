@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97a0b94a3ba11e7679d4745c54eb8b92",
+    "content-hash": "5963243bfc61ee5717d564e3ab4589a7",
     "packages": [
         {
             "name": "botman/botman",
@@ -4236,6 +4236,60 @@
                 "source": "https://github.com/phar-io/version/tree/3.0.3"
             },
             "time": "2020-11-30T09:21:21+00:00"
+        },
+        {
+            "name": "phlak/coding-standards",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHLAK/CodingStandards.git",
+                "reference": "e6b3d8c7fe5ac6c8a607ef2521c10f6785c062e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/e6b3d8c7fe5ac6c8a607ef2521c10f6785c062e7",
+                "reference": "e6b3d8c7fe5ac6c8a607ef2521c10f6785c062e7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "php": ">=7.2",
+                "phpunit/phpunit": "^9.3",
+                "symfony/var-dumper": "^5.1",
+                "vimeo/psalm": "^3.14 || ^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHLAK\\CodingStandards\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Kankiewicz",
+                    "email": "Chris@ChrisKankiewicz.com"
+                }
+            ],
+            "description": "A pre-defined set of coding standards for PHP CS Fixer.",
+            "support": {
+                "issues": "https://github.com/PHLAK/CodingStandards/issues",
+                "source": "https://github.com/PHLAK/CodingStandards/tree/1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/PHLAK",
+                    "type": "github"
+                },
+                {
+                    "url": "https://paypal.me/ChrisKankiewicz",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2020-12-08T15:57:48+00:00"
         },
         {
             "name": "php-cs-fixer/diff",

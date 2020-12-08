@@ -13,13 +13,14 @@ use DI\ContainerBuilder;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use RuntimeException;
 
+/** @coversNothing */
 class TestCase extends PHPUnitTestCase
 {
     protected Container $container;
     protected BotMan $botman;
 
     /** This method is called before each test. */
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->container = (new ContainerBuilder)->addDefinitions(
             ...glob(dirname(__DIR__) . '/config/*.php')

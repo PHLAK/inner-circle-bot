@@ -15,7 +15,7 @@ class Busy
         'encrypting', 'factoring', 'generating', 'indexing', 'initializing',
         'mapping', 'multiplexing', 'parsing', 'prioritizing', 'reordering',
         'resolving', 'reticulating', 'routing', 'sorting', 'transcoding',
-        'upgrading', 'unravelling'
+        'upgrading', 'unravelling',
     ];
 
     /** @const Array of adjecetives */
@@ -26,7 +26,7 @@ class Busy
         'linked', 'low-level', 'multi-dimensional', 'negative', 'non-euclidean',
         'positive', 'prallel', 'quantifiable', 'random', 'sentient', 'static',
         'sub-zero', 'tertiary', 'unlinked', 'unusual', 'well-documented',
-        'vectorized', '' // Intentionally blank
+        'vectorized', '', // Intentionally blank
     ];
 
     /** @const Array of nouns */
@@ -35,7 +35,7 @@ class Busy
         'datasets', 'fields', 'frames', 'functions', 'datastores', 'lists',
         'matrices', 'objects', 'procedures', 'processes', 'queues',
         'receptacles', 'repositories', 'sectors', 'segments', 'sequences',
-        'splines', 'states', 'structures', 'tables', 'threads'
+        'splines', 'states', 'structures', 'tables', 'threads',
     ];
 
     /** Handle the incoming request. */

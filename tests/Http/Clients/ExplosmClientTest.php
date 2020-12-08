@@ -11,7 +11,8 @@ use Tests\TestCase;
 /** @covers \App\Http\Clients\ExplosmClient */
 class ExplosmClientTest extends TestCase
 {
-    public function test_it_can_fetch_the_latest_comic(): void
+    /** @test */
+    public function it_can_fetch_the_latest_comic(): void
     {
         $comic = $this->mockExplosmClient()->latest();
 
@@ -21,7 +22,8 @@ class ExplosmClientTest extends TestCase
         $this->assertEquals('http://explosm.net/comics/1337/', $comic->sourceUrl);
     }
 
-    public function test_it_can_fetch_a_comic_by_id(): void
+    /** @test */
+    public function it_can_fetch_a_comic_by_id(): void
     {
         $comic = $this->mockExplosmClient()->byId(1337);
 
@@ -39,9 +41,9 @@ class ExplosmClientTest extends TestCase
                 new MockHandler($responses ?? [
                     new Response(200, [], file_get_contents(
                         $this->path('explosm.html')
-                    ))
+                    )),
                 ])
-            )
+            ),
         ]);
     }
 }

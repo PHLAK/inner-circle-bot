@@ -10,7 +10,8 @@ use Tests\TestCase;
 /** @covers \App\Middleware\LogMessage */
 class LogMessageTest extends TestCase
 {
-    public function test_it_logs_the_incoming_message(): void
+    /** @test */
+    public function it_logs_the_incoming_message(): void
     {
         $logger = $this->createMock(Logger::class);
         $logger->expects($this->once())->method('info')->with('Incomming message', []);

@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Coinflip */
 class CoinflipTest extends TestCase
 {
-    public function test_it_can_flip_a_coin(): void
+    /** @test */
+    public function it_can_flip_a_coin(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(

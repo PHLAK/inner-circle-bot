@@ -9,7 +9,8 @@ use Tests\TestCase;
 /** @covers \App\Commands\Busy */
 class BusyTest extends TestCase
 {
-    public function test_it_respond_with_a_busy_message(): void
+    /** @test */
+    public function it_respond_with_a_busy_message(): void
     {
         $botman = $this->createMock(BotMan::class);
         $botman->expects($this->once())->method('reply')->with(

@@ -30,7 +30,7 @@ class Btc
     {
         if (Carbon::parse($date)->isFuture()) {
             $botman->sendRequest('sendSticker', [
-                'sticker' => Collection::make(self::STICKER_IDS)->random()
+                'sticker' => Collection::make(self::STICKER_IDS)->random(),
             ]);
 
             return;
