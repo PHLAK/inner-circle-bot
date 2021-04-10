@@ -19,7 +19,7 @@ coverage: # Generate an HTML coverage report
 	@vendor/bin/phpunit --coverage-html .coverage
 
 tunnel: # Expose the application via a secure tunnel
-	@ngrok http -host-header=rewrite http://icbot.local:80
+	@ngrok http -host-header=rewrite http://inner-circle-bot.local:80
 
 webhook: # Register the Telegram webhook URL
 	@curl --request POST --header 'content-type: application/json' \

@@ -32,19 +32,11 @@ In order to test the application locally you will first need to create your own
 Telegram bot to interact with. See the [Telegram docs](https://core.telegram.org/bots#creating-a-new-bot)
 for instructions on creating and configuring your own bot.
 
-### Create the Docker `development` Network
-
-    docker network create development
-
-### Run the `jwilder/nginx-proxy` Container
-
-    docker run -d -p 80:80 --network development --restart unless-stopped --volume /var/run/docker.sock:/tmp/docker.sock:ro --name dev-proxy jwilder/nginx-proxy
-
 ### Configure the Hostname
 
 Add the following entry to `/etc/hosts`:
 
-    127.0.0.1  icbot.local
+    127.0.0.1  inner-circle-bot.local
 
 ### Set Environment Variables
 
@@ -71,7 +63,7 @@ or from within the Docker container:
 
 ### Create application tunnel via ngrok
 
-    ngrok http -host-header=rewrite http://icbot.local:80
+    ngrok http -host-header=rewrite http://inner-circle-bot.local:80
 
 ### Set the Telegram bot webhook URL
 
