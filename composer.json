@@ -27,7 +27,7 @@
         "phlak/coding-standards": "^2.0",
         "phpunit/phpunit": "^9.0",
         "psy/psysh": "^0.10",
-        "vimeo/psalm": "^4.2"
+        "vimeo/psalm": "^5.7"
     },
     "autoload": {
         "psr-4": {
